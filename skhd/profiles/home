@@ -3,10 +3,10 @@ ctrl - t : "${HOME}"/.config/scripts/open_iterm2.sh
 ctrl + shift - t: "${HOME}"/.config/scripts/open_iterm2.sh
 
 #move focus
-ctrl - h : yabai -m window --focus west
-ctrl - j : yabai -m window --focus south
-ctrl - k : yabai -m window --focus north
-ctrl - l : yabai -m window --focus east
+ctrl + alt - h : yabai -m window --focus west
+ctrl + alt - j : yabai -m window --focus south
+ctrl + alt - k : yabai -m window --focus north
+ctrl + alt - l : yabai -m window --focus east
 
 #insert window
 ctrl + shift - h : yabai -m window --warp west
