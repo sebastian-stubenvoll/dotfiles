@@ -1,0 +1,17 @@
+#!/bin/bash
+#I believe the pywal discord script is using the wrong directory
+#It points to ~/Library/Preferences/... rather than ~/Library/Application\ Support\...
+#This script provides a workaround (currently only supports default theme)
+
+#Run with -d flag to create ~/Library/Preferences/BetterDiscord/themes directory
+echo "Creating deprecated directory..."
+pywal-discord -d
+
+#Create a symlink in the correct location pointing to where pywal-discord creates the theme
+echo "Creating symlink in the correct directory..."
+ln -s ~/Library/Preferences/BetterDiscord/themes/pywal-discord-default.theme.css \
+      ~/Library/Application\ Support/BetterDiscord/themes/
+
+echo "Fix applied, you don't need to run this script again (unless you remove the symlink)."
+
+

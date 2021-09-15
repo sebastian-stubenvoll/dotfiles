@@ -1,0 +1,108 @@
+global !p
+texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC', 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES', 'AmsFS', 'AmsGS' ]] + ['math_block']
+
+texIgnoreMathZones = ['texMathText']
+
+texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+
+texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+
+ignore = texIgnoreMathZoneIds[0]
+
+
+def math():
+	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+	try:
+		first = next(i for i in reversed(synstackids) if i in texIgnoreMathZoneIds or i in texMathZoneIds)
+		return first != ignore
+	except StopIteration:
+		return False
+endglobal
+
+
+
+##############
+# MATH STUFF #
+##############
+priority 0
+context "math()"
+snippet SQ "^2" iA
+^2$0
+endsnippet
+
+priority 0
+context "math()"
+snippet CB "^3" iA
+^3$0
+endsnippet
+
+priority 0
+context "math()"
+snippet SC "superscript" iA
+^{$1}$0
+endsnippet
+
+priority 0
+context "math()"
+snippet // "Fraction" i
+\\frac{$1}{$2}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)//' "Fraction" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+priority 1000
+context "math()"
+snippet '^.*\)//' "() Fraction" wrA
+`!p
+stripped = match.string[:-2]
+depth = 0
+i = len(stripped) - 1
+while True:
+	if stripped[i] == ')': depth += 1
+	if stripped[i] == '(': depth -= 1
+	if depth == 0: break;
+	i -= 1
+snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+`{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet RT "root" 
+\sqrt[\leftroot{-3}\uproot{3}$1]{$2}$0
+endsnippet
+
+priority 500
+context "math()"
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)RT\d' "root" wrA
+\sqrt[\leftroot{1}\uproot{2}`!p snip.rv = match.group(0)[-1]`]{`!p snip.rv = match.group(1)`}$0
+endsnippet
+
+priority 1050
+context "math()"
+snippet '^.*\)RT\d' "root" wrA
+`!p
+p = match.string[-1]
+stripped = match.string[:-3]
+depth = 0
+i = len(stripped) - 1
+while True:
+	if stripped[i] == ')': depth += 1
+	if stripped[i] == '(': depth -= 1
+	if depth == 0: break;
+	i -= 1
+snip.rv = stripped[0:i] + "\\sqrt[\\leftroot{1}\\uproot{2}"+ p +"]{" + stripped[i+1:-1] + "}"
+`$0
+endsnippet
+
+priority 0
+context "math()"
+snippet int "integral" w
+\int_\{$1\}^\{$2\} $3 $0
+endsnippet
+
+# vim:ft=snippets:

@@ -1,0 +1,435 @@
+global !p
+texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC', 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES', 'AmsFS', 'AmsGS' ]] + ['math_block']
+
+texIgnoreMathZones = ['texMathText']
+
+texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+
+texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+
+ignore = texIgnoreMathZoneIds[0]
+
+
+def math():
+	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+	try:
+		first = next(i for i in reversed(synstackids) if i in texIgnoreMathZoneIds or i in texMathZoneIds)
+		return first != ignore
+	except StopIteration:
+		return False
+endglobal
+
+#################
+# GREEK SYMBOLS #
+#################
+
+priority 0
+context "math()"
+snippet "alpha" "alpha symbol" Ai
+\alpha$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "beta" "beta symbol" Ai
+\beta$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "gamma" "gamma symbol" Ai
+\gamma$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Gamma" "Gamma symbol" Ai
+\Gamma$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "delta" "delta symbol" Ai
+\delta$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Delta" "Delta symbol" Ai
+\Delta$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "epsilon" "epsilon symbol" Ai
+\epsilon$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "vepsilon" "vepsilon symbol" Ai
+\vepsilon$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "zeta" "zeta symbol" Ai
+\zeta$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "eta" "eta symbol" Ai
+\eta$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "theta" "theta symbol" Ai
+\theta$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "vtheta" "vtheta symbol" Ai
+\vtheta$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Theta" "Theta symbol" Ai
+\Theta$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "iota" "iota symbol" Ai
+\iota$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "kappa" "kappa symbol" Ai
+\kappa$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "lambda" "lambda symbol" Ai
+\lambda$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Lambda" "Lambda symbol" Ai
+\Lambda$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "mu" "mu symbol" A
+\mu$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "nu" "nu symbol" A
+\nu$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "xi" "xi symbol" A
+\xi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Xi" "Xi symbol" A
+\Xi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "pi" "pi symbol" A
+\pi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Pi" "Pi symbol" A
+\Pi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "rho" "rho symbol" Ai
+\rho$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "vrho" "vrho symbol" Ai
+\vrho$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "sigma" "sigma symbol" Ai
+\sigma$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Sigma" "Sigma symbol" Ai
+\Sigma$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "tau" "tau symbol" Ai
+\tau$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "upsilon" "upsilon symbol" Ai
+\upsilon$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Upsilon" "Upsilon symbol" Ai
+\Upsilon$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "phi" "phi symbol" Ai
+\phi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "vphi" "vphi symbol" Ai
+\vphi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Phi" "Phi symbol" Ai
+\Phi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "chi" "chi symbol" Ai
+\chi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "psi" "psi symbol" Ai
+\psi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Psi" "Psi symbol" Ai
+\Psi$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "omega" "omega symbol" Ai
+\omega$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "Omega" "Omega symbol" Ai
+\Omega$0
+endsnippet
+
+######################
+# SPECIAL CHARACTERS #
+######################
+priority 0
+context "math()"
+snippet "letter" "mathbb for domain letters" Ai
+\mathbb{$1}$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "inf" "infinity symbol" Ai
+\infty
+endsnippet
+
+priority 0
+context "math()"
+snippet "nabla" "nabla symbol" Ai
+\nabla$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "forall" "forall symbol" Ai
+\forall$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "exist" "exists symbol" Ai
+\exists$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "nexist" "nexists symbol" Ai
+\nexists$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "partial" "partial symbol" Ai
+\partial$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "part" "partial symbol" Ai
+\partial$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "neg" "neg symbol" Ai
+\neg$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "dot" "cdot symbol" Ai
+\cdot$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "emptyset" "empty set symbol" Ai
+\emptyset$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "tms" "times symbol" Ai
+\times$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "cap" "cap symbol" Ai
+\cap$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "cup" "cup symbol" Ai
+\cup$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "neq" "not equal symbol" Ai
+\neq$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "notequal" "not equal symbol" Ai
+\neq$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "nequal" "not equal symbol" Ai
+\neq$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "leq" "less or equal symbol" Ai
+\leq$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "geq" "greater or equal symbol" Ai
+\geq$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "lin" "in symbol" A
+\in$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "lnotin" "not in symbol" Ai
+\notin$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "subset" "subset symbol" Ai
+\subset$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "simeq" "similar equal symbol" Ai
+\simeq$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "approx" "approx symbol" Ai
+\approx$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "lor" "logical or" Ai
+\wedge$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "land" "logical and" Ai
+\vee$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "equiv" "equiv symbol" Ai
+\equiv$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "box" "box symbol" Ai
+\Box$0
+endsnippet
+
+priority 0
+snippet "=>" "implies" Ai
+\impliesi
+endsnippet
+
+priority 0
+snippet "<=" "implied by" Ai
+\impliedby
+endsnippet
+
+## vim:ft=snippets:

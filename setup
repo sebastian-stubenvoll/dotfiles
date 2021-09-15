@@ -1,0 +1,47 @@
+#!/bin/bash
+#Probably still a WIP; gradually filling in bits as I go
+
+#Backup existing directories
+BACKUPDIR=~/"$(date +"%d-%m-%Y_%H%M%S")"_dotfiles_backup
+
+if [ -d "$BACKUPDIR" ]; then
+    echo "The directory "$BACKUPDIR" already exists."
+    return 1 2>/dev/null
+    exit 1
+fi
+
+echo "Creating backup directory..."
+mkdir "$BACKUPDIR"
+
+#Move files into backup directory if they exist
+echo "Moving existing configuration files..."
+[ -d ~/.config ] && mv ~/.config "$BACKUPDIR"
+[ -d ~/.Xresources ] && mv ~/.Xresources "$BACKUPDIR"
+[ -d ~/.oh-my-zsh ] && mv ~/.oh-my-zsh "$BACKUPDIR"
+[ -f ~/.p10k.zsh ] && mv ~/.p10k.zsh "$BACKUPDIR"
+[ -f ~/.tmux.conf ] && mv ~/.tmux.conf "$BACKUPDIR"
+[ -f ~/.zshrc ] && mv ~/.zshrc "$BACKUPDIR"
+[ -d ~/.spicetify_data ] && mv ~/.spicetify_data "$BACKUPDIR"
+
+
+#Copy config files to ~/.config
+echo "Copying new config files..."
+SOURCEDIR=$(dirname "$0")
+mkdir ~/.config
+cp "SOURCEDIR/*" ~/.config
+
+
+#Symlink binaries into ~/.local/bin
+echo "Linking binaries..."
+[ ! -d ~/.local/bin ] && mkdir -p ~/.local/bin
+ln -s ~/.config/bunt/build-new-theme ~/.local/bin/bunt
+ln -s ~/.config/skhd/switcher ~/.local/bin/skhs
+
+
+#Create symlinks so all the information is actually contained within ~/.config/
+echo "Creating symlinks..."
+ln -s ~/.config/xresources/.Xresources ~/.Xresources
+ln -s ~/.config/.oh-my-zsh ~/.oh-my-zsh
+ln -s ~/.config/p10k/.p10k.zsh ~/.p10k.zsh
+ln -s ~/.config/zsh/.zshrc ~/.zshrc
+ln -s ~/.config/spicetify_data ~/spicetify_data

@@ -1,0 +1,15 @@
+.DS_Store
+.mono
+.oh-my-zsh
+/coc/
+/configstore/
+/neofetch/
+/nvim/plugged/
+/nvim/coc-settings.json
+/pywal-discord/ #is created by installing pywal-discord 
+/spicetify_data/Backup/
+/spicetify_data/Extracted/
+/spotify-tui/
+/wal/
+/zathura/ #is created by installing zathura-pywal
+

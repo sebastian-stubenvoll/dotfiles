@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ $# -eq 0 ]; then
+    echo "Please provide a valid name for a profile stored under ~/.config/skhd/profiles"
+    return 1 2>/dev/null
+    exit 1
+fi
+
+NEW_CFG=$1
+
+if [ -f "${SKHD_DIR}/profiles/$1" ]; then
+	ln -sfn "${SKHD_DIR}/profiles/$1" "${SKHD_DIR}/skhdrc"
+    skhd --reload #invoke manual reload just in case
+	osascript -e 'display notification "changed SKHD config to '"$1"'." with title "SKHD config"' 
+else
+	osascript -e 'display notification "no such config '"$1"'." with title "SKHD config"'
+fi
+
+
+
