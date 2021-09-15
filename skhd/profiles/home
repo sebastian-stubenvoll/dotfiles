@@ -3,22 +3,22 @@ ctrl - t : "${HOME}"/.config/scripts/open_iterm2.sh
 ctrl + shift - t: "${HOME}"/.config/scripts/open_iterm2.sh
 
 #move focus
-ctrl + alt - h : yabai -m window --focus west
-ctrl + alt - j : yabai -m window --focus south
-ctrl + alt - k : yabai -m window --focus north
-ctrl + alt - l : yabai -m window --focus east
+ctrl + shift - h : yabai -m window --focus west
+ctrl + shift - j : yabai -m window --focus south
+ctrl + shift - k : yabai -m window --focus north
+ctrl + shift - l : yabai -m window --focus east
 
 #insert window
-ctrl + shift - h : yabai -m window --warp west
-ctrl + shift - j : yabai -m window --warp south
-ctrl + shift - k : yabai -m window --warp north
-ctrl + shift - l : yabai -m window --warp east
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - l : yabai -m window --warp east
 
 #swap window 
-ctrl + alt - h : yabai -m window --swap west
-ctrl + alt - j : yabai -m window --swap south
-ctrl + alt - k : yabai -m window --swap north
-ctrl + alt - l : yabai -m window --swap east
+ctrl + alt + cmd - h : yabai -m window --swap west
+ctrl + alt + cmd - j : yabai -m window --swap south
+ctrl + alt + cmd - k : yabai -m window --swap north
+ctrl + alt + cmd - l : yabai -m window --swap east
 
 #window size: u/i = bigger/smaller; shift = toggle vertical
 ctrl - u : yabai -m window --resize left:-20:0; yabai -m window --resize right:20:0

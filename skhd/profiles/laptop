@@ -7,18 +7,22 @@ fn - h : yabai -m window --focus west
 fn - j : yabai -m window --focus south
 fn - k : yabai -m window --focus north
 fn - l : yabai -m window --focus east
+fn + shift - h : yabai -m window --focus west
+fn + shift - j : yabai -m window --focus south
+fn + shift - k : yabai -m window --focus north
+fn + shift - l : yabai -m window --focus east
 
 #insert window
-fn + shift - h : yabai -m window --warp west
-fn + shift - j : yabai -m window --warp south
-fn + shift - k : yabai -m window --warp north
-fn + shift - l : yabai -m window --warp east
+fn + alt - h : yabai -m window --warp west
+fn + alt - j : yabai -m window --warp south
+fn + alt - k : yabai -m window --warp north
+fn + alt - l : yabai -m window --warp east
 
 #swap window 
-fn + alt - h : yabai -m window --swap west
-fn + alt - j : yabai -m window --swap south
-fn + alt - k : yabai -m window --swap north
-fn + alt - l : yabai -m window --swap east
+fn + alt + cmd - h : yabai -m window --swap west
+fn + alt + cmd - j : yabai -m window --swap south
+fn + alt + cmd - k : yabai -m window --swap north
+fn + alt + cmd - l : yabai -m window --swap east
 
 #window size: u/i = bigger/smaller; shift = toggle vertical
 fn - u : yabai -m window --resize left:-20:0; yabai -m window --resize right:20:0
