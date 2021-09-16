@@ -49,8 +49,8 @@ ctrl + shift - 8 : yabai -m window --space eighth
 ctrl + shift - 9 : yabai -m window --space ninth
 
 #space management
-ctrl + shift + alt - 1 : yabai -m window --display 1
-ctrl + shift + alt - 2 : yabai -m window --display 2
+ctrl + shift + alt - 1 : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + shift + alt - 2 : yabai -m window --display 2; yabai -m display --focus 2
 
 ctrl + shift + cmd - 1 : yabai -m display --focus 1
 ctrl + shift + cmd - 2 : yabai -m display --focus 2
