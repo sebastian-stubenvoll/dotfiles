@@ -92,8 +92,16 @@ snippet * "italics"
 *${1:${VISUAL}}*$0
 endsnippet
 
+snippet "(\w+)ITA" "Italics postfix" riA
+*`!p snip.rv=match.group(1)`*$0
+endsnippet
+
 snippet ** "bold"
 **${1:${VISUAL}}**$0
+endsnippet
+
+snippet "(\w+)BF" "Bold postfix" riA
+**`!p snip.rv=match.group(1)`**$0
 endsnippet
 
 snippet *** "bold italics"
@@ -150,7 +158,7 @@ snippet "tab([1-9][x][1-9])" "Fancy table" br
 endsnippet
 
 priority 0
-snippet math "Math"
+snippet lm "Math"
 $${1}$$0
 endsnippet
 
