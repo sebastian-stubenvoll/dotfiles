@@ -27,5 +27,7 @@ function! MathAndLiquid()
 endfunction
 
 " Call everytime we open a Markdown file
+" This adds the mathzone text object, so UltiSnips knows when to expand the
+" borrowed tex snippets
 autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathAndLiquid()
 

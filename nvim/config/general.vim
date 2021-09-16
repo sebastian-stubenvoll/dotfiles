@@ -20,12 +20,7 @@ autocmd vimenter * ++nested hi texItalStyle gui=italic
 autocmd vimenter * ++nested hi clear texBoldStyle
 autocmd vimenter * ++nested hi texBoldStyle gui=bold
 
-"VimTex conceal settings
-let g:tex_flavor = 'latex'
-let g:tex_conceal='abdmgs'
-let g:tex_fast='bcmMprsSvV'
-hi texItalStyle gui=italic
-hi texBoldStyle gui=bold
+"Text conceal
 autocmd vimenter * ++nested set conceallevel=2
 autocmd vimenter * ++nested set concealcursor=""
 
