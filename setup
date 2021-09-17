@@ -48,3 +48,6 @@ ln -s ~/.config/.oh-my-zsh ~/.oh-my-zsh
 ln -s ~/.config/p10k/.p10k.zsh ~/.p10k.zsh
 ln -s ~/.config/zsh/.zshrc ~/.zshrc
 ln -s ~/.config/spicetify_data ~/spicetify_data
+
+#Symlink active vim theme (wal by default)
+ln -s ~/.config/nvim/config/themes/pywal.vim ~/.config/nvim/active_theme.vim
