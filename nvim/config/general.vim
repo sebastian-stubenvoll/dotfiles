@@ -26,7 +26,9 @@ autocmd vimenter * ++nested set concealcursor=""
 
 "Buffer mappings
 "Listing buffers is done with ctrlp (see ctrlp.vim)
-nnoremap <C-b>b :bp<CR>
-nnoremap <C-b>n :bn<CR>
-nnoremap <C-b>d :bd<CR>
+nnoremap <silent> <C-b>b :bp<CR>
+nnoremap <silent> <C-b>n :bn<CR>
+nnoremap <silent> <C-b>d :bd<CR>
+nnoremap <silent> gb :bn<CR>
+nnoremap <silent> gB :bp<CR>
 
