@@ -24,3 +24,9 @@ autocmd vimenter * ++nested hi texBoldStyle gui=bold
 autocmd vimenter * ++nested set conceallevel=2
 autocmd vimenter * ++nested set concealcursor=""
 
+"Buffer mappings
+"Listing buffers is done with ctrlp (see ctrlp.vim)
+nnoremap <C-b>b :bp<CR>
+nnoremap <C-b>n :bn<CR>
+nnoremap <C-b>d :bd<CR>
+

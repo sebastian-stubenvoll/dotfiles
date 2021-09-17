@@ -12,4 +12,5 @@ source $HOME/.config/nvim/config/airline.vim
 source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/nerdtree.vim
 source $HOME/.config/nvim/config/ultisnips.vim
+source $HOME/.config/nvim/config/ctrlp.vim
 

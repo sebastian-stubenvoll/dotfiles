@@ -13,6 +13,7 @@ Plug 'rsmenon/vim-mathematica'
 Plug 'morhetz/gruvbox'
 Plug 'justinmk/vim-sneak'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
+Plug 'matze/vim-tex-fold'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -28,5 +29,6 @@ Plug 'dylanaraps/wal.vim'
 Plug 'deanashton/vim-deckset'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'kien/ctrlp.vim'
 
 call plug#end()

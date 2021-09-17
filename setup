@@ -23,11 +23,14 @@ echo "Moving existing configuration files..."
 [ -f ~/.zshrc ] && mv ~/.zshrc "$BACKUPDIR"
 [ -d ~/.spicetify_data ] && mv ~/.spicetify_data "$BACKUPDIR"
 
+mkdir ~/.config
+
+#install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 #Copy config files to ~/.config
 echo "Copying new config files..."
 SOURCEDIR=$(dirname "$0")
-mkdir ~/.config
 cp "SOURCEDIR/*" ~/.config
 
 
