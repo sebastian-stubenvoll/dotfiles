@@ -123,3 +123,5 @@ fi
 #Zathura themeing
 export PATH="/Users/sebastian/.local/bin:$PATH"
 
+#aliases
+alias neofetch='neofetch --iterm2 ~/.config/bunt/wallpaper'
