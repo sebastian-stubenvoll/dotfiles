@@ -32,3 +32,8 @@ nnoremap <silent> <C-b>d :bd<CR>
 nnoremap <silent> gb :bn<CR>
 nnoremap <silent> gB :bp<CR>
 
+"CursorLine highglighting doesn't look to good with a lot of wal schemes
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * highlight CursorLine cterm=italic ctermfg=7 ctermbg=0 guibg=Grey40
+augroup END
