@@ -143,6 +143,8 @@ ln -s ~/.config/nvim/config/themes/pywal.vim ~/.config/nvim/active_theme.vim
 
 #make zsh default shell
 chsh -s $(which zsh)
+#apply fast syntax theme
+fast-theme ~/.config/fast-syntax-highlighting/syntax-colors.ini
 
 echo "Manual adjustments might be required:"
 echo "Install the pywal firefox extension"
