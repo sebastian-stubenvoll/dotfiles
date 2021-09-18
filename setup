@@ -1,6 +1,10 @@
 #!/bin/bash
 #Probably still a WIP; gradually filling in bits as I go
 
+############
+#  backup  #
+############
+
 #Backup existing directories
 BACKUPDIR=~/"$(date +"%d-%m-%Y_%H%M%S")"_dotfiles_backup
 
@@ -25,8 +29,81 @@ echo "Moving existing configuration files..."
 
 mkdir ~/.config
 
+##########
+#  brew  #
+##########
+
 #install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+#tap casks
+brew tap homebrew/cask-fonts #nerdfont
+brew tap colinstein/imgcat
+brew tap zegervdv/zathura
+
+#run update before installing packages
+brew update
+
+#Applications
+brew install zsh
+brew install python
+brew install node
+brew install tmux
+brew install neovim
+brew install skhd
+brew install yabai
+brew install neovim
+brew install neofetch
+brew install gotop
+brew install imgcat
+
+#Nerd fonts
+brew install --cask font-meslo-nerd-font
+brew install --cask font-noto-nerd-font
+brew install --cask font-inconsolata-nerd-font
+
+#Zathura
+brew install zathura
+brew install zathura-pdf-poppler
+mkdir -p $(brew --prefix zathura)/lib/zathura
+ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
+
+#run one final brew upgrade
+brew upgrade
+#remove unused dependencies
+brew autoremove
+
+echo "Brew installations complete..."
+
+############
+#  python  #
+############
+
+echo "Installing python..."
+#speficially use python2/python3 -m pip just to be safe
+python3 -m pip install pynvim 
+python2 -m pip install pynvim 2>/dev/null
+
+###########
+#  other  #
+###########
+
+#if git isn't installed this will prompt an installation window
+git --version > /dev/null
+
+#ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#fast-syntax-highlighting
+git clone https://github.com/zdharma/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+
+#p10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+
+############################
+#  copy files and symlink  #
+############################
 
 #Copy config files to ~/.config
 echo "Copying new config files..."
@@ -51,3 +128,10 @@ ln -s ~/.config/spicetify_data ~/spicetify_data
 
 #Symlink active vim theme (wal by default)
 ln -s ~/.config/nvim/config/themes/pywal.vim ~/.config/nvim/active_theme.vim
+
+##################
+#  post install  #
+##################
+echo "Manual adjustments might be required:"
+echo "Install the pywal firefox extension"
+echo "Set the iterm font"
