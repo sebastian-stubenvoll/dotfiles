@@ -9,8 +9,9 @@ global !p
 def create_table(snip):
 	# retrieving single line from current string and treat it like tabstops count
 	placeholders_string = snip.buffer[snip.line].strip()
-	rows_amount = int(placeholders_string[0])
-	columns_amount = int(placeholders_string[2])
+	seperated_list = placeholders_string.split('x')
+	rows_amount = int(seperated_list[0])
+	columns_amount = int(seperated_list[1])
 
 	prefix_str = "from vimsnippets import display_width;"
 
@@ -45,7 +46,7 @@ def create_table(snip):
 			rv_val = "(" + max_width_str + "-" + cur_width_str + ")*' '"
 			placeholder = "R{0}C{1}".format(row, col)
 			body_row += "${" + str(row*columns_amount+col)  + ":" + placeholder\
-				+ "}`!p " + prefix_str + "snip.rv=" + rv_val + "` | "
+				+ "}`!p " + prefix_str + "snip.rv=" + rv_val + "` |"
 
 		body_row += "\n"
 		anon_snippet_body += body_row
@@ -153,7 +154,7 @@ snippet detail "Disclosure"
 endsnippet
 
 post_jump "create_table(snip)"
-snippet "tab([1-9][x][1-9])" "Fancy table" br
+snippet "tab([1-9][\d]*[x][1-9][\d]*)" "Fancy table" br
 `!p snip.rv = match.group(1)`
 endsnippet
 
