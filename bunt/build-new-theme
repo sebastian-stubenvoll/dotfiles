@@ -46,6 +46,9 @@ else
     done
 fi
 
+#clear neofetch cache
+neofetch --clean
+
 #apply to spotify
 echo "Applying new theme to spotify..."
 spicetify apply
@@ -61,6 +64,7 @@ echo " ✔️"
 echo -n "Quitting XQuartz..."
 killall -m Xquartz
 echo " ✔️"
+
 
 echo "You may need to fetch pywal colors in firefox."
 echo "If the new discord theme didn't apply run pywal-discord-fix."
