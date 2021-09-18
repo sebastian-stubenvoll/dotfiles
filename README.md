@@ -1,16 +1,23 @@
-# Regarding the setup script #
-
-## ❗Disclamer❗ ##
-
-This script is currently **untested** and a work in progress. Proceed at your
-own risk.
-
-## About ##
+# About #
 
 This repository holds all my personal configuration files. Though it is a work
 in progress, I am hoping to eventually automate the setup process as much as possible.
 Hence I am gradually building a setup script that can be run to install all
 necessary software.
+
+## Features ##
+
+This section is a work in progress.
+
+**bu**ild **n**ew **t**hemes using the *bunt* script. This calls pywal and
+updates all themes on applications that use pywal colours.
+
+![example gif](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/themes_example.gif?raw=true)
+
+## ❗Disclamer❗ ##
+
+This script is currently **untested** and a work in progress. Proceed at your
+own risk.
 
 ## Installation process ##
 
