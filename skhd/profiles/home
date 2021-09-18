@@ -49,11 +49,12 @@ ctrl + shift - 8 : yabai -m window --space eighth
 ctrl + shift - 9 : yabai -m window --space ninth
 
 #space management
-ctrl + shift + alt - 1 : yabai -m window --display 1; yabai -m display --focus 1
-ctrl + shift + alt - 2 : yabai -m window --display 2; yabai -m display --focus 2
+#you may want swap around these display bindings depending on setup
+ctrl + shift + cmd - p : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + shift + cmd - o : yabai -m window --display 2; yabai -m display --focus 2
 
-ctrl + shift + cmd - 1 : yabai -m display --focus 1
-ctrl + shift + cmd - 2 : yabai -m display --focus 2
+ctrl + shift - p  : yabai -m display --focus 1
+ctrl + shift - o : yabai -m display --focus 2
 
 cmd + ctrl - 1 : yabai -m space --display 1
 cmd + ctrl - 2 : yabai -m space --display 2
