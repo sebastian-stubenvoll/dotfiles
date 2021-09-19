@@ -2,13 +2,6 @@
 DIR=$HOME/.config/bunt
 GET_WALLPAPER=true
 
-
-
-# remove manually wal cache
-echo -n "Removing previous wal cache..."
-rm -rf "$HOME/.cache/wal/*_config_bunt_wallpaper_*"
-echo " ✔️"
-
 if [ ! $# -eq 0 ]; then
     if [ ! -f "$1" ]; then
         echo "$1 is not a file! Aborting..."
@@ -18,7 +11,7 @@ if [ ! $# -eq 0 ]; then
 
     cp -v "$1" "$DIR/wallpaper"
 
-    wal -i $DIR/wallpaper --backend haishoku
+    wal -i "$DIR/wallpaper" --backend haishoku
 
     imgcat --height 10 $DIR/wallpaper
 
@@ -27,14 +20,22 @@ else
     do
         # fetch random wallpaper from unsplash
         echo -n "Fetching a random wallpaper..."
-        wget -O $DIR/wallpaper https://source.unsplash.com/random/1920x1080 > /dev/null 2>&1
+        wget -O "$DIR/temp" https://source.unsplash.com/random/1920x1080 1>/dev/null 2>&1
         echo " ✔️"
+
+        # temporary fix
+        # i have no idea why but downloading directly into $DIR/wallpaper causes
+        # wal to set the last wallpaper that was copied???
+        # even if all the caches (wal/wallpaper file/macos wallpaper db) are cleared.
+        # i have absolutely no idea why this is happening and i am tearing my hair out
+        cp -v "$DIR/temp" "$DIR/wallpaper"
+        rm "$DIR/temp"
 
         # generate colors palette, skip setting wallpaper
         echo "Generating colours..."
-        wal -i $DIR/wallpaper --backend haishoku
+        wal -i "$DIR/wallpaper" --backend haishoku
 
-        imgcat --height 10 $DIR/wallpaper
+        imgcat --height 10 "$DIR/wallpaper"
 
         while true; do
             echo "Are you happy with this theme?"
@@ -49,7 +50,7 @@ else
 fi
 
 #clear neofetch cache
-neofetch --clean
+neofetch --clean > /dev/null
 
 #apply to discord
 #run pywal-discord-fix if this isn't working
