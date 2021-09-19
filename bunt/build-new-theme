@@ -1,39 +1,89 @@
 #!/bin/bash
 DIR=$HOME/.config/bunt
 GET_WALLPAPER=true
+BACKEND=haishoku
+RESTART_SPOTIFY=true
+TAG=
+
+while test $# -gt 0; do
+    case "$1" in
+        -h|--help)
+            echo "Usage..."
+            exit 0
+            ;;
+        -b|--backend)
+            shift
+            if test $# -gt 0; then
+                case "$1" in
+                    haishoku)
+                        BACKEND=haishoku ;;
+                    schemer|schemer2)
+                        BACKEND=schemer2 ;;
+                    colorz)
+                        BACKEND=colorz ;;
+                    wal)
+                        BACKEND=wal ;;
+                    colorthief)
+                        BACKEND=colorthief ;;
+                    *)
+                        echo "Unknown backend, proceeding with haishoku backend..."
+                        BACKEND=haishoku ;;
+                esac
+            else
+                echo "No backend specified! Aborting..."
+                exit 1
+            fi
+            shift
+            ;;
+        -t|--tag)
+            shift
+            if test $# -gt 0; then
+                TAG="$1"
+            else
+                "No search tag specified! Aborting..."
+                exit 1
+            fi
+            shift
+            ;;
+        -s|--skip-spotify-restart)
+            shift
+            RESTART_SPOTIFY=false ;;
+        *)
+            break
+            ;;
+    esac
+done
 
 if [ ! $# -eq 0 ]; then
     if [ ! -f "$1" ]; then
         echo "$1 is not a file! Aborting..."
-        return 1 2>/dev/null
         exit 1
     fi
 
-    cp -v "$1" "$DIR/wallpaper"
+    cp "$1" "$DIR/wallpaper"
 
-    wal -i "$DIR/wallpaper" --backend haishoku
+    wal -i "$DIR/wallpaper" --backend "$BACKEND"
 
     imgcat --height 10 $DIR/wallpaper
 
 else
     while [ "$GET_WALLPAPER" == "true" ]
-    do
-        # fetch random wallpaper from unsplash
+    do # fetch random wallpaper from unsplash
         echo -n "Fetching a random wallpaper..."
-        wget -O "$DIR/temp" https://source.unsplash.com/random/1920x1080 1>/dev/null 2>&1
+        wget -O "$DIR/temp" https://source.unsplash.com/random/1920x1080/?$TAG >/dev/null 2>&1
         echo " ✔️"
 
         # temporary fix
-        # i have no idea why but downloading directly into $DIR/wallpaper causes
-        # wal to set the last wallpaper that was copied???
+        # i have no idea why but downloading directly into $DIR/wallpaper can break things
         # even if all the caches (wal/wallpaper file/macos wallpaper db) are cleared.
         # i have absolutely no idea why this is happening and i am tearing my hair out
-        cp -v "$DIR/temp" "$DIR/wallpaper"
+        cp "$DIR/temp" "$DIR/wallpaper"
         rm "$DIR/temp"
 
         # generate colors palette, skip setting wallpaper
         echo "Generating colours..."
-        wal -i "$DIR/wallpaper" --backend haishoku
+        wal -q -i "$DIR/wallpaper" --backend "$BACKEND" > /dev/null 2>&1
+        wal --preview
 
         imgcat --height 10 "$DIR/wallpaper"
 
@@ -59,10 +109,18 @@ pywal-discord
 echo " ✔️"
 
 #apply to spotify
-echo "Applying new theme to spotify..."
+echo -n "Applying new theme to spotify..."
+echo " ✔️"
+
 if ! pgrep "Spotify" 1>/dev/null; then
+    RESTART_SPOTIFY=false #always skip if spotify not running
+fi
+
+if [ "$RESTART_SPOTIFY" == "false" ]; then
+    echo "Skipping spotify restart!"
     spicetify apply -n
 else
+    echo "Restarting spotify!"
     spicetify apply
 fi
 
