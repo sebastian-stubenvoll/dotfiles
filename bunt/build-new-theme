@@ -2,6 +2,13 @@
 DIR=$HOME/.config/bunt
 GET_WALLPAPER=true
 
+
+
+# remove manually wal cache
+echo -n "Removing previous wal cache..."
+rm -rf "$HOME/.cache/wal/*_config_bunt_wallpaper_*"
+echo " ✔️"
+
 if [ ! $# -eq 0 ]; then
     if [ ! -f "$1" ]; then
         echo "$1 is not a file! Aborting..."
@@ -21,11 +28,6 @@ else
         # fetch random wallpaper from unsplash
         echo -n "Fetching a random wallpaper..."
         wget -O $DIR/wallpaper https://source.unsplash.com/random/1920x1080 > /dev/null 2>&1
-        echo " ✔️"
-
-        # remove manually wal cache
-        echo -n "Removing previous wal cache..."
-        rm -rf "$HOME/.cache/wal"
         echo " ✔️"
 
         # generate colors palette, skip setting wallpaper
@@ -49,20 +51,24 @@ fi
 #clear neofetch cache
 neofetch --clean
 
-#apply to spotify
-echo "Applying new theme to spotify..."
-spicetify apply
-
-
 #apply to discord
 #run pywal-discord-fix if this isn't working
 echo -n "Applying new theme to discord..."
 pywal-discord
 echo " ✔️"
 
+#apply to spotify
+echo "Applying new theme to spotify..."
+if ! pgrep "Spotify" 1>/dev/null; then
+    spicetify apply -n
+else
+    spicetify apply
+fi
+
 #quit xquartz after applying spotify theme
 echo -n "Quitting XQuartz..."
-killall -m Xquartz
+#surpress stderr because we don't care if no process was found
+killall -m Xquartz 2>/dev/null
 echo " ✔️"
 
 
