@@ -19,6 +19,8 @@ updates all themes on applications that use pywal colours.
 This script is currently **untested** and a work in progress. Proceed at your
 own risk.
 
+Also some features require SIP to be disabled.
+
 ## Installation process ##
 
 The script will attempt to back up any existing configuration files into a
@@ -55,6 +57,7 @@ The installation process is split into the following segments:
 | imgcat                   | brew                |
 | various fonts            | brew                |
 | zathura                  | brew                |
+| firefox                  | brew                |
 | pynvim                   | python / pip        |
 | oh-my-zsh                | curl + script       |
 | fast-syntax-highlighting | git                 |
