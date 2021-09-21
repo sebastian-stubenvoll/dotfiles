@@ -121,7 +121,16 @@ if [ "$RESTART_SPOTIFY" == "false" ]; then
     spicetify apply -n
 else
     echo "Restarting spotify!"
+    #grab spotify space, add rule and remove rule once window exists
+    #this isn't perfect but good enough for now
+    #might eventually be replaced with a dedicated spotify space anyway
+    SPOTIFY_SPACE=$(yabai -m query --windows | jq -c '.[] | select(.app == "Spotify").space')
+    yabai -m rule --add app="Spotify" space=$SPOTIFY_SPACE label="spotify_restart"
     spicetify apply
+    while [[ ! $(yabai -m query --windows | jq -c '.[] | select(.app == "Spotify")') ]]; do
+        sleep 0.01
+    done
+    yabai -m rule --remove "spotify_restart"
 fi
 
 #quit xquartz after applying spotify theme
@@ -133,3 +142,4 @@ echo " ✔️"
 
 echo "You may need to fetch pywal colors in firefox."
 echo "If the new discord theme didn't apply run pywal-discord-fix."
+
