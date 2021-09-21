@@ -29,5 +29,6 @@ Plug 'deanashton/vim-deckset'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'kien/ctrlp.vim'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
