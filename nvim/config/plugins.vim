@@ -30,5 +30,6 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'kien/ctrlp.vim'
 Plug 'mhinz/vim-startify'
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 
 call plug#end()

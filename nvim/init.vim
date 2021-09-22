@@ -13,4 +13,6 @@ source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/nerdtree.vim
 source $HOME/.config/nvim/config/ultisnips.vim
 source $HOME/.config/nvim/config/ctrlp.vim
+source $HOME/.config/nvim/config/indentline.vim
+source $HOME/.config/nvim/config/vim-markdown.vim
 
