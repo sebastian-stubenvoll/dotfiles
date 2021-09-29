@@ -127,6 +127,7 @@ else
     SPOTIFY_SPACE=$(yabai -m query --windows | jq -c '.[] | select(.app == "Spotify").space')
     yabai -m rule --add app="Spotify" space=$SPOTIFY_SPACE label="spotify_restart"
     spicetify apply
+    echo "Waiting for spotify to re-open. If this doesn't happen automatically, please relaunch spotify now."
     while [[ ! $(yabai -m query --windows | jq -c '.[] | select(.app == "Spotify")') ]]; do
         sleep 0.01
     done
