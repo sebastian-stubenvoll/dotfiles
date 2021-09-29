@@ -58,6 +58,8 @@ The installation process is split into the following segments:
 | various fonts            | brew                |
 | zathura                  | brew                |
 | firefox                  | brew                |
+| spotify                  | brew                |
+| discord                  | brew                |
 | pynvim                   | python / pip        |
 | oh-my-zsh                | curl + script       |
 | fast-syntax-highlighting | git                 |

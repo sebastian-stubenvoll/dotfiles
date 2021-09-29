@@ -9,8 +9,7 @@
 BACKUPDIR=~/"$(date +"%d-%m-%Y_%H%M%S")"_dotfiles_backup
 
 if [ -d "$BACKUPDIR" ]; then
-    echo "The directory "$BACKUPDIR" already exists."
-    echo "Aborting..."
+    echo "The directory "$BACKUPDIR" already exists." echo "Aborting..."
     return 1 2>/dev/null
     exit 1
 fi
@@ -66,6 +65,7 @@ brew install gotop
 brew install imgcat
 brew install --cask firefox
 brew install --cask spotify
+brew install --cask discord
 
 #Nerd fonts
 brew install --cask font-meslo-nerd-font
@@ -100,6 +100,7 @@ python2 -m pip install pynvim 2>/dev/null
 ###########
 
 #if git isn't installed this will prompt an installation window
+#though if it isn't installed the macos version is probably ancient enough to break other things
 git --version > /dev/null
 
 #ohmyzsh
