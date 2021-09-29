@@ -19,8 +19,7 @@ while test $# -gt 0; do
                         BACKEND=haishoku ;;
                     schemer|schemer2)
                         BACKEND=schemer2 ;;
-                    colorz)
-                        BACKEND=colorz ;;
+                    colorz) BACKEND=colorz ;;
                     wal)
                         BACKEND=wal ;;
                     colorthief)
@@ -64,7 +63,7 @@ if [ ! $# -eq 0 ]; then
 
     wal -i "$DIR/wallpaper" --backend "$BACKEND"
 
-    imgcat --height 10 $DIR/wallpaper
+    if [ ! $TERM = "screen-256color" ]; then imgcat --height 10 $DIR/wallpaper; fi
 
 else
     while [ "$GET_WALLPAPER" == "true" ]
@@ -85,7 +84,7 @@ else
         wal -q -i "$DIR/wallpaper" --backend "$BACKEND" > /dev/null 2>&1
         wal --preview
 
-        imgcat --height 10 "$DIR/wallpaper"
+        if [ ! $TERM = "screen-256color" ]; then imgcat --height 10 $DIR/wallpaper; fi
 
         while true; do
             echo "Are you happy with this theme?"
