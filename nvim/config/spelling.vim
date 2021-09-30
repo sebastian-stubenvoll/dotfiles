@@ -23,7 +23,9 @@ function! SpellLangCycle()
     endif
 endfunction
 
-nnoremap <silent> <C-s> :call SpellLangCycle()<CR>
+
+autocmd vimenter * ++nested nnoremap <silent> <leader>s :call SpellLangCycle()<CR>
+
 
 let g:grammarous#convert_char_to_byte = 1
 
@@ -32,14 +34,14 @@ function! GetGrammarousLang()
     return ':GrammarousCheck --lang=' . g:grammarlang . "\<CR>"
 endfunction
 
-nmap <C-g>w <Plug>(grammarous-move-to-info-window)
-nmap <C-g>o <Plug>(grammarous-open-info-window)
-nmap <C-g>r <Plug>(grammarous-reset)
-nmap <C-g>f <Plug>(grammarous-fixit)
-nmap <C-g>c <Plug>(grammarous-close-info-window)
-nmap <C-g>i <Plug>(grammarous-remove-error)
-nmap <C-g>n <Plug>(grammarous-move-to-next-error)
-nmap <C-g>p <Plug>(grammarous-move-to-previous-error)
-nnoremap <silent> <expr> <C-g>g GetGrammarousLang()
+nmap <leader>gw <Plug>(grammarous-move-to-info-window)
+nmap <leader>go <Plug>(grammarous-open-info-window)
+nmap <leader>gr <Plug>(grammarous-reset)
+nmap <leader>gf <Plug>(grammarous-fixit)
+nmap <leader>gc <Plug>(grammarous-close-info-window)
+nmap <leader>gi <Plug>(grammarous-remove-error)
+nmap <leader>gn <Plug>(grammarous-move-to-next-error)
+nmap <leader>gp <Plug>(grammarous-move-to-previous-error)
+nnoremap <silent> <expr> <leader>gg GetGrammarousLang()
 
 

@@ -1,1 +1,1 @@
-nnoremap <C-b>l :CtrlPBuffer<Cr>
+nnoremap <C-b> :CtrlPBuffer<Cr>

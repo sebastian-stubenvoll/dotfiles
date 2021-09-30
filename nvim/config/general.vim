@@ -12,6 +12,9 @@ set background=dark
 syntax on
 filetype plugin indent on
 
+"Set leader
+let mapleader = " "
+
 "Text Highlighting
 autocmd vimenter * ++nested hi clear SpellBad 
 autocmd vimenter * ++nested hi SpellBad  ctermfg=9  guifg=#fb4934 gui=undercurl
@@ -26,9 +29,9 @@ autocmd vimenter * ++nested set concealcursor=""
 
 "Buffer mappings
 "Listing buffers is done with ctrlp (see ctrlp.vim)
-nnoremap <silent> <C-b>b :bp<CR>
-nnoremap <silent> <C-b>n :bn<CR>
-nnoremap <silent> <C-b>d :bd<CR>
+nnoremap <silent> <leader>bb :bp<CR>
+nnoremap <silent> <leader>bn :bn<CR>
+nnoremap <silent> <leader>bd :bd<CR>
 nnoremap <silent> gb :bn<CR>
 nnoremap <silent> gB :bp<CR>
 
