@@ -32,5 +32,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 Plug 'justinmk/vim-sneak'
+Plug 'lervag/vimtex'
 
 call plug#end()

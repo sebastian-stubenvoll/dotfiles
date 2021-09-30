@@ -2,7 +2,6 @@
 source $HOME/.config/nvim/config/general.vim
 source $HOME/.config/nvim/config/plugins.vim
 source $HOME/.config/nvim/config/spelling.vim
-source $HOME/.config/nvim/config/filespecific.vim
 
 "Visual settings
 source $HOME/.config/nvim/config/active_theme.vim

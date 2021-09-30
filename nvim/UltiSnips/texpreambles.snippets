@@ -1,0 +1,74 @@
+priority 0
+snippet notespre "basic peramble for quickly taking notes" bA
+\documentclass[11pt]{report}
+\usepackage[T1]{fontenc}	
+\usepackage[bottom,hang]{footmisc}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{physics}
+\usepackage[bf,hang,nooneline,justification=centering]{caption}
+\usepackage{booktabs}
+\usepackage[a4paper, left=1.5cm, top=1.5cm, bottom=1.5cm, right=2cm]{geometry}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge}
+
+\begin{document}
+$0
+
+\end{document}
+endsnippet
+
+snippet thesispre "preamble for university papers" bA
+%! TeX program = xelatex
+
+\documentclass[12pt]{article}
+
+${1:%}\usepackage{apacite}
+${2:%}\bibliographystyle{apacite}
+
+\usepackage[T1]{fontenc}	
+\usepackage[bottom,hang]{footmisc}
+\usepackage{polyglossia}
+\setmainlanguage{german}
+\usepackage{xltxtra}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage[bf,hang,nooneline,justification=centering]{caption}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{tabto}
+\usepackage{tabularx}
+\usepackage[a4paper, left=2cm, top=2cm, bottom=2cm, right=3.5cm]{geometry}
+\usepackage{pdfpages}
+\onehalfspacing
+${3:%}\setcounter{secnumdepth}{0}
+
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+${4:%}\includepdf[pages=-]{Deckblatt.pdf}
+
+\tableofcontents
+
+\newpage
+${5:%}\pagenumbering{arabic} \setcounter{page}{${6:3}}
+
+$0
+
+\newpage
+${7:%}\bibliography{${8:bib file}}
+\end{document}
+endsnippet

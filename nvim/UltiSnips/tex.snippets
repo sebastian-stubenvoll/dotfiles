@@ -4,6 +4,7 @@ extends texmath
 extends texsymbols
 extends texeval
 extends texpostfix
+extends texpreambles
 
 global !p
 
@@ -50,28 +51,6 @@ def add_row(snip):
 
 endglobal
 
-priority 0
-snippet pre "basic peramble for quickly taking notes" bA
-\documentclass[12pt]{article}
-\usepackage[T1]{fontenc}	
-\usepackage[bottom,hang]{footmisc}
-\usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{dsfont}
-\usepackage{url}
-\usepackage{graphicx}
-\usepackage{physics}
-\usepackage[bf,hang,nooneline,justification=centering]{caption}
-\usepackage{booktabs}
-\usepackage[a4paper, left=2cm, top=2cm, bottom=2cm, right=3cm]{geometry}
-\usepackage{titlesec}
-
-\titleformat{\chapter}[display]
-  {\normalfont\bfseries}{}{0pt}{\Huge}
-
-endsnippet
 
 priority 0
 snippet begin "begin{} / end{}" bA
@@ -367,33 +346,64 @@ endsnippet
 
 priority 100
 snippet cite "full citation in brackets" w
-\cite<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+\cite{${1:reference}} $0
 endsnippet
 
 priority 100
 snippet citeA "full citation for inline use" w
-\citeA<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+\citeA{${1:reference}} $0
 endsnippet
 
 priority 100
 snippet citeauthor "author citation without years" w
-\citeauthor<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+\citeauthor{${1:reference}} $0
 endsnippet
 
 priority 100
 snippet citeyear "year citation in brackets" w
-\citeyear<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+\citeyear{${1:reference}} $0
 endsnippet
 
 priority 100
 snippet citeyearNP "year citation without brackets" w
-\citeyearNP<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+\citeyearNP{${1:reference}} $0
 endsnippet
 
 priority 100
 snippet citeNP "full citation without ANY brackets" w
+\citeNP{${1:reference}} $0
+endsnippet
+
+priority 100
+snippet fcite "full citation in brackets with prefix/suffix" w
+\cite<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+endsnippet
+
+priority 100
+snippet fciteA "full citation for inline use with prefix/suffix" w
+\citeA<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+endsnippet
+
+priority 100
+snippet fciteauthor "author citation without years with prefix/suffix" w
+\citeauthor<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+endsnippet
+
+priority 100
+snippet fciteyear "year citation in brackets with prefix/suffix" w
+\citeyear<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+endsnippet
+
+priority 100
+snippet fciteyearNP "year citation without brackets with prefix/suffix" w
+\citeyearNP<${1:prefix}>[${2:suffix}]{${3:reference}} $0
+endsnippet
+
+priority 100
+snippet fciteNP "full citation without ANY brackets with prefix/suffix" w
 \citeNP<${1:prefix}>[${2:suffix}]{${3:reference}} $0
 endsnippet
+
 
 ################
 # ENVIRONMENTS #

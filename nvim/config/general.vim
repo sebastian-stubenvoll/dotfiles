@@ -12,8 +12,9 @@ set background=dark
 syntax on
 filetype plugin indent on
 
-"Set leader
+"Set leaders
 let mapleader = " "
+let maplocalleader = "#"
 
 "Text Highlighting
 autocmd vimenter * ++nested hi clear SpellBad 
