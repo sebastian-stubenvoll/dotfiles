@@ -28,7 +28,7 @@ Plug 'dylanaraps/wal.vim'
 Plug 'deanashton/vim-deckset'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 Plug 'justinmk/vim-sneak'
