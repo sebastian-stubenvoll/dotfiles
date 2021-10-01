@@ -66,6 +66,9 @@ brew install imgcat
 brew install --cask firefox
 brew install --cask spotify
 brew install --cask discord
+brew install khanhas/tap/spicetify-cli #might be oudated?
+brew install xdotool
+brew install dbus && brew reinstall dbus
 
 #Nerd fonts
 brew install --cask font-meslo-nerd-font
@@ -74,7 +77,10 @@ brew install --cask font-inconsolata-nerd-font
 brew install --cask font-jetbrains-mono
 
 #Zathura
-brew install zathura
+sudo sed -i '' 's/>EXTERNAL</>DBUS_COOKIE_SHA1</g' /usr/local/opt/dbus/share/dbus-1/session.conf
+brew services start dbus
+brew install girara
+brew install zathura --with-synctex
 brew install zathura-pdf-poppler
 mkdir -p $(brew --prefix zathura)/lib/zathura
 ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
@@ -94,6 +100,8 @@ echo "Installing python..."
 #speficially use python2/python3 -m pip just to be safe
 python3 -m pip install pynvim 
 python2 -m pip install pynvim 2>/dev/null
+pip3 install neovim-remote
+
 
 ###########
 #  other  #
@@ -156,7 +164,12 @@ fast-theme ~/.config/fast-syntax-highlighting/syntax-colors.ini
 #start yabai service
 brew services start yabai
 
+#set up zathura pywal support
+chmod +x ~/.config/zathura/install.sh
+~/.config/zathura/install.sh
+
 #set up spicetify
+spicetify update #brew version is probably going to be outdated!
 #custom apps aren't included in the brew build i think?
 #thus clone the repo, move folders and delete tmp
 [ -d ~/.config/tmp ] && mkdir ~/.config/tmp

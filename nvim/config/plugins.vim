@@ -11,8 +11,6 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'rsmenon/vim-mathematica'
 Plug 'morhetz/gruvbox'
-Plug 'donRaphaco/neotex', { 'for': 'tex' }
-Plug 'matze/vim-tex-fold'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'

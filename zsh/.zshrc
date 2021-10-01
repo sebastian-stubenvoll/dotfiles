@@ -125,3 +125,6 @@ export PATH="/Users/sebastian/.local/bin:$PATH"
 
 #aliases
 alias neofetch='neofetch --iterm2 ~/.config/bunt/wallpaper'
+
+#dbus
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
