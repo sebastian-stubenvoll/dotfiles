@@ -25,7 +25,7 @@ def create_table(snip):
 	final_str = old_spacing + "\\begin{tabular}{" + " ".join(['${' + str(i + 1) + ':?}' for i in range(cols)]) + "}\n"
 
 	for i in range(rows):
-		descriptor = "header" if i == 0 else "item"
+		descriptor = "header" if i == 0 else "item  "
 		final_str += old_spacing + '\t'
 		final_str += " & ".join(['${' + str(i * cols + j + offset) + ': {}'.format(descriptor) + '}' for j in range(cols)])
 

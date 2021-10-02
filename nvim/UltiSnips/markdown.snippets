@@ -5,56 +5,48 @@ extends texpostfix
 priority -50
 
 global !p
-# A overkill(dirty) table with automatic alignment feature
+
 def create_table(snip):
-	# retrieving single line from current string and treat it like tabstops count
-	placeholders_string = snip.buffer[snip.line].strip()
-	seperated_list = placeholders_string.split('x')
-	rows_amount = int(seperated_list[0])
-	columns_amount = int(seperated_list[1])
+  rows = snip.buffer[snip.line].split('x')[0]
+  cols = snip.buffer[snip.line].split('x')[1]
 
-	prefix_str = "from vimsnippets import display_width;"
+  int_val = lambda string: int(''.join(s for s in string if s.isdigit()))
 
-	# erase current line
-	snip.buffer[snip.line] = ""
+  rows = int_val(rows)
+  cols = int_val(cols)
 
-	# create anonymous snippet with expected content and number of tabstops
-	anon_snippet_title = "| "
-	anon_snippet_delimiter = "|"
-	for col in range(1, columns_amount+1):
-		sync_rows = [x*columns_amount+col for x in range(rows_amount+1)]
-		sync_str = ",".join(["t[{0}]".format(x) for x in sync_rows])
-		max_width_str = "max(list(map(display_width, [" + sync_str + "])))"
-		cur_width_str = "display_width(t[" + str(col) + "])"
-		rv_val = "(" + max_width_str + "-" + cur_width_str + ")*' '"
-		anon_snippet_title += "${" + str(col)  + ":head" + str(col)\
-			+ "}`!p " + prefix_str + "snip.rv=" + rv_val + "` | "
-		anon_snippet_delimiter += ":`!p " + prefix_str + "snip.rv = "\
-			+ max_width_str + "*'-'" + "`-|"
+  offset = cols + 1
+  old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t')+1]
 
-	anon_snippet_title += "\n"
+  snip.buffer[snip.line] = ''
 
-	anon_snippet_delimiter += "\n"
-	anon_snippet_body = ""
-	for row in range(1, rows_amount+1):
-		body_row = "| "
-		for col in range(1, columns_amount+1):
-			sync_rows = [x*columns_amount+col for x in range(rows_amount+1)]
-			sync_str = ",".join(["t[{0}]".format(x) for x in sync_rows])
-			max_width_str = "max(list(map(display_width, [" + sync_str + "])))"
-			cur_width_str = "display_width(t[" + str(row*columns_amount+col) + "])"
-			rv_val = "(" + max_width_str + "-" + cur_width_str + ")*' '"
-			placeholder = "R{0}C{1}".format(row, col)
-			body_row += "${" + str(row*columns_amount+col)  + ":" + placeholder\
-				+ "}`!p " + prefix_str + "snip.rv=" + rv_val + "` |"
+  final_str = old_spacing
 
-		body_row += "\n"
-		anon_snippet_body += body_row
+  for i in range(rows+2):
+    if i == 1:
+      final_str += old_spacing + '|'
+      final_str += "|".join(['--------' for j in range(cols)])
+      final_str += "|\n"
+    else:
+      descriptor = "HEADER" if i == 0 else " ITEM "
+      final_str += old_spacing + '|'
+      final_str += " |".join([' ${' + str(i * cols + j + offset) + ':{}'.format(descriptor) + '}' for j in range(cols)])
+      final_str += " |\n"
 
-	anon_snippet_table = anon_snippet_title + anon_snippet_delimiter + anon_snippet_body
+  snip.expand_anon(final_str)
 
-	# expand anonymous snippet
-	snip.expand_anon(anon_snippet_table)
+def add_row(snip):
+  row_len = int(''.join(s for s in snip.buffer[snip.line] if s.isdigit()))
+  old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
+
+  snip.buffer[snip.line] = ''
+
+  final_str = old_spacing + '|'
+  final_str += " |".join([' ${' + str(j + 1) + ':ITEM}' for j in range(row_len)])
+  final_str += " |"
+
+  snip.expand_anon(final_str)
+
 endglobal
 
 ###########################
@@ -113,6 +105,18 @@ snippet /* "Comment"
 <!-- ${1:${VISUAL}} -->$0
 endsnippet
 
+##########################################################
+#  Table snippets (use markdown plugin to format align)  #
+##########################################################
+
+pre_expand "create_table(snip)"
+snippet "tab(\d*)[x](\d*)" "Generate table of *width* by *height*" br
+endsnippet
+
+pre_expand "add_row(snip)"
+snippet "tr(\d*)" "Add table row of dimension ..." br
+endsnippet
+
 ################
 # Common stuff #
 ################
@@ -151,11 +155,6 @@ snippet detail "Disclosure"
 <details${3: open=""}>
   ${1:<summary>${2}</summary>}$0
 </details>
-endsnippet
-
-post_jump "create_table(snip)"
-snippet "tab([1-9][\d]*[x][1-9][\d]*)" "Fancy table" br
-`!p snip.rv = match.group(1)`
 endsnippet
 
 priority 0

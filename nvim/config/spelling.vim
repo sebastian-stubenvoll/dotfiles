@@ -23,9 +23,7 @@ function! SpellLangCycle()
     endif
 endfunction
 
-
-autocmd vimenter * ++nested nnoremap <silent> <leader>s :call SpellLangCycle()<CR>
-
+nmap <silent> <leader>ll :call SpellLangCycle()<CR>
 
 let g:grammarous#convert_char_to_byte = 1
 
