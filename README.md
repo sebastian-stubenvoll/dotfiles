@@ -68,6 +68,8 @@ The installation process is split into the following segments:
 | oh-my-zsh                | curl + script       |
 | fast-syntax-highlighting | git                 |
 | p10k                     | git                 |
+| betterdiscord            | git                 |
+| pywal-discord            | git                 |
 
 If you're wanting to run this script, feel free to open it up and comment out
 the applications you don't wish to install.

@@ -59,7 +59,6 @@ brew install tmux
 brew install neovim
 brew install skhd
 brew install yabai
-brew install neovim
 brew install neofetch
 brew install gotop
 brew install imgcat
@@ -123,6 +122,14 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 #yabai scripting addon
 sudo yabai --install-sa
 
+#better discord
+sudo chown -R "$USER":staff /Applications/Discord.app
+git clone https://github.com/BetterDiscord/BetterDiscord.git
+cd BetterDiscord && npm install
+npm run build
+npm run inject
+cd .. & rm -r BetterDiscord
+
 ############################
 #  copy files and symlink  #
 ############################
@@ -149,7 +156,7 @@ ln -s ~/.config/zsh/.zshrc ~/.zshrc
 ln -s ~/.config/spicetify_data ~/spicetify_data
 
 #Symlink active vim theme (wal by default)
-ln -s ~/.config/nvim/config/themes/pywal.vim ~/.config/nvim/active_theme.vim
+ln -sfn ~/.config/nvim/config/themes/pywal.vim ~/.config/nvim/active_theme.vim
 
 ##################
 #  post install  #
@@ -168,8 +175,16 @@ brew services start yabai
 chmod +x ~/.config/zathura/install.sh
 ~/.config/zathura/install.sh
 
+#set up pywal-discord
+git clone https://github.com/FilipLitwora/pywal-discord.git ~/.config/
+chmod +x ~/.config/pywal-discord/install
+~/.config/pywal-discord/install
+~/.config/bunt/pywal-discord-fix
+
+
 #set up spicetify
 spicetify update #brew version is probably going to be outdated!
+
 #custom apps aren't included in the brew build i think?
 #thus clone the repo, move folders and delete tmp
 [ -d ~/.config/tmp ] && mkdir ~/.config/tmp
