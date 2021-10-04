@@ -166,4 +166,30 @@ priority 0
 snippet dm "Math"
 $$${1}$$$0
 endsnippet
+
+#############
+#  DECKSET  #
+#############
+snippet ns "New slide" bA
+---
+$0
+endsnippet
+
+snippet iquote "Impactful deckset quote" b
+>${1:Quote}
+---${2:Author}
+$0
+endsnippet
+
+snippet footer "Deckset slide footer/pagenumbers" b
+footer: ${1:footer text}
+slidenumbers: ${2:true|false}
+$0
+endsnippet
+
+snippet isec "Impactful deckset header" b
+# [fit] ${1:HEADER} #
+$0
+endsnippet
+
 # vim:ft=snippets:

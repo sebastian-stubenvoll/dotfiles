@@ -31,7 +31,7 @@ snippet thesispre "preamble for university papers" bA
 \documentclass[12pt]{article}
 
 ${1:%}\usepackage{apacite}
-${2:%}\bibliographystyle{apacite}
+$1\bibliographystyle{apacite}
 
 \usepackage[T1]{fontenc}	
 \usepackage[bottom,hang]{footmisc}
@@ -52,23 +52,25 @@ ${2:%}\bibliographystyle{apacite}
 \usepackage[a4paper, left=2cm, top=2cm, bottom=2cm, right=3.5cm]{geometry}
 \usepackage{pdfpages}
 \onehalfspacing
-${3:%}\setcounter{secnumdepth}{0}
+
+%Uncomment for title page
+${2:%}\setcounter{secnumdepth}{0}
 
 
 \begin{document}
 
-\pagenumbering{gobble}
+$2\pagenumbering{gobble}
 
-${4:%}\includepdf[pages=-]{Deckblatt.pdf}
+$2\includepdf[pages=-]{${3:Title}.pdf}
 
 \tableofcontents
 
 \newpage
-${5:%}\pagenumbering{arabic} \setcounter{page}{${6:3}}
+$2\pagenumbering{arabic} \setcounter{page}{${4:3}}
 
 $0
 
 \newpage
-${7:%}\bibliography{${8:bib file}}
+$1\bibliography{${5:bibfile}}
 \end{document}
 endsnippet

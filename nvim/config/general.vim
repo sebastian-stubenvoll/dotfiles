@@ -65,3 +65,14 @@ nnoremap <leader>w <C-w>
 
 "Clear highlight binding
 nnoremap <silent> <leader>hc :noh<CR>
+
+"Paragraph mappings
+nnoremap ü {
+nnoremap + }
+
+"Section mappings
+nnoremap Ü [
+nnoremap * ]
+
+"Add back goto start of next line
+nnoremap ö +

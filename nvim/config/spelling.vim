@@ -41,5 +41,5 @@ nmap <leader>gi <Plug>(grammarous-remove-error)
 nmap <leader>gn <Plug>(grammarous-move-to-next-error)
 nmap <leader>gp <Plug>(grammarous-move-to-previous-error)
 nnoremap <silent> <expr> <leader>gg GetGrammarousLang()
-
+nnoremap <leader>ls z=
 
