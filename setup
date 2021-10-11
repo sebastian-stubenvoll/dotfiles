@@ -45,7 +45,7 @@ mkdir ~/.config
 
 #tap casks
 brew tap homebrew/cask-fonts #nerdfont
-brew tap colinstein/imgcat
+brew install eddieantonio/eddieantonio/imgcat
 brew tap zegervdv/zathura
 
 #run update before installing packages
@@ -164,6 +164,10 @@ ln -sfn ~/.config/nvim/config/themes/pywal.vim ~/.config/nvim/active_theme.vim
 
 #make zsh default shell
 chsh -s $(which zsh)
+
+#symlink python3 if not already exists
+#required for jabrefExtension
+[ ! -f /usr/bin/python3 ] && ln -s /usr/local/bin/python3 /usr/bin/python3
 
 #apply fast syntax theme
 fast-theme ~/.config/fast-syntax-highlighting/syntax-colors.ini
