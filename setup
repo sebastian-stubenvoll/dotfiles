@@ -32,7 +32,6 @@ echo "Moving existing configuration files..."
 [ -f ~/.p10k.zsh ] && mv ~/.p10k.zsh "$BACKUPDIR"
 [ -f ~/.tmux.conf ] && mv ~/.tmux.conf "$BACKUPDIR"
 [ -f ~/.zshrc ] && mv ~/.zshrc "$BACKUPDIR"
-[ -d ~/.spicetify_data ] && mv ~/.spicetify_data "$BACKUPDIR"
 
 mkdir ~/.config
 
@@ -153,7 +152,6 @@ ln -s ~/.config/xresources/.Xresources ~/.Xresources
 ln -s ~/.config/.oh-my-zsh ~/.oh-my-zsh
 ln -s ~/.config/p10k/.p10k.zsh ~/.p10k.zsh
 ln -s ~/.config/zsh/.zshrc ~/.zshrc
-ln -s ~/.config/spicetify_data ~/spicetify_data
 
 #Symlink active vim theme (wal by default)
 ln -sfn ~/.config/nvim/config/themes/pywal.vim ~/.config/nvim/active_theme.vim
@@ -193,7 +191,7 @@ spicetify update #brew version is probably going to be outdated!
 #thus clone the repo, move folders and delete tmp
 [ -d ~/.config/tmp ] && mkdir ~/.config/tmp
 git clone https://github.com/khanhas/spicetify-cli.git ~./config/tmp
-mv ~/.config/tmp/spicetify-cli/CustomApps/* ~/.config/spicetify_data/CustomApps
+mv ~/.config/tmp/spicetify-cli/CustomApps/* ~/.config/spicetify/CustomApps
 rm -rf ~/.config/tmp
 spicetify backup apply enable-devtool
 

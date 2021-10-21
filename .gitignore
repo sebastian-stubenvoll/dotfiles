@@ -10,9 +10,9 @@
 /nvim/plugged/
 /nvim/config/active_theme.vim
 /pywal-discord/
-/spicetify_data/Backup/
-/spicetify_data/Extracted/
-/spicetify_data/CustomApps/
+/spicetify/Backup/
+/spicetify/Extracted/
+/spicetify/CustomApps/
 /spotify-tui/
 /wal/
 
