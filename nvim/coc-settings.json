@@ -1,5 +1,4 @@
 {
-    "python.jediPath": "/usr/local/lib/python3.9/site-packages",
     "markdownlint.config" : {
         "default" : true,
         "headers": false,
