@@ -63,6 +63,7 @@ The installation process is split into the following segments:
 | spicetify-cli            | brew                |
 | xodotool                 | brew                |
 | dbus                     | brew                |
+| fzf                      | brew                |
 | pynvim                   | python / pip        |
 | neovim remote            | python / pip        |
 | oh-my-zsh                | curl + script       |

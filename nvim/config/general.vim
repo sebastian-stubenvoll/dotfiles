@@ -50,7 +50,7 @@ let mapleader = " "
 let maplocalleader = "#"
 
 "Buffer mappings
-"Listing buffers is done with ctrlp (see ctrlp.vim)
+"Listing buffers is done with fzf (see fzf.vim)
 nnoremap <silent> <leader>bb :bp<CR>
 nnoremap <silent> <leader>bn :bn<CR>
 nnoremap <silent> <leader>bd :bd<CR>

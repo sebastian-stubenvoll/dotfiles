@@ -67,6 +67,7 @@ brew install --cask discord
 brew install khanhas/tap/spicetify-cli #might be oudated?
 brew install xdotool
 brew install dbus && brew reinstall dbus
+brew install fzf
 
 #Nerd fonts
 brew install --cask font-meslo-nerd-font
