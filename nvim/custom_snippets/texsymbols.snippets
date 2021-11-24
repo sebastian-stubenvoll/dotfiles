@@ -1,22 +1,6 @@
 global !p
-texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC', 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES', 'AmsFS', 'AmsGS' ]] + ['mkdMath']
-
-texIgnoreMathZones = ['texMathText']
-
-texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
-
-texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
-
-ignore = texIgnoreMathZoneIds[0]
-
-
 def math():
-	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
-	try:
-		first = next(i for i in reversed(synstackids) if i in texIgnoreMathZoneIds or i in texMathZoneIds)
-		return first != ignore
-	except StopIteration:
-		return False
+    return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 endglobal
 
 #################
@@ -25,229 +9,229 @@ endglobal
 
 priority 0
 context "math()"
-snippet "alpha" "alpha symbol" Ai
+snippet "(?<!\\)alpha" "alpha symbol" rAi
 \alpha$0
 endsnippet
 
 priority 1
 context "math()"
-snippet "beta" "beta symbol" Ai
+snippet "(?<!\\)beta" "beta symbol" rrAi
 \beta$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "gamma" "gamma symbol" Ai
+snippet "(?<!\\)gamma" "gamma symbol" rAi
 \gamma$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Gamma" "Gamma symbol" Ai
+snippet "(?<!\\)Gamma" "Gamma symbol" rAi
 \Gamma$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "delta" "delta symbol" Ai
+snippet "(?<!\\)delta" "delta symbol" rAi
 \delta$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Delta" "Delta symbol" Ai
+snippet "(?<!\\)Delta" "Delta symbol" rAi
 \Delta$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "epsilon" "epsilon symbol" Ai
+snippet "(?<!\\)epsilon" "epsilon symbol" rAi
 \epsilon$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "vepsilon" "vepsilon symbol" Ai
+snippet "(?<!\\)vepsilon" "vepsilon symbol" rAi
 \vepsilon$0
 endsnippet
 
 priority 1
 context "math()"
-snippet "zeta" "zeta symbol" Ai
+snippet "(?<!\\)zeta" "zeta symbol" rAi
 \zeta$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "eta" "eta symbol" Ai
+snippet "(?<!\\)eta" "eta symbol" rAi
 \eta$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "theta" "theta symbol" Ai
+snippet "(?<!\\)theta" "theta symbol" rAi
 \theta$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "vtheta" "vtheta symbol" Ai
+snippet "(?<!\\)vtheta" "vtheta symbol" rAi
 \vtheta$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Theta" "Theta symbol" Ai
+snippet "(?<!\\)Theta" "Theta symbol" rAi
 \Theta$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "iota" "iota symbol" Ai
+snippet "(?<!\\)iota" "iota symbol" rAi
 \iota$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "kappa" "kappa symbol" Ai
+snippet "(?<!\\)kappa" "kappa symbol" rAi
 \kappa$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "lambda" "lambda symbol" Ai
+snippet "(?<!\\)lambda" "lambda symbol" rAi
 \lambda$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Lambda" "Lambda symbol" Ai
+snippet "(?<!\\)Lambda" "Lambda symbol" rAi
 \Lambda$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "mu" "mu symbol" A
+snippet "(?<!\\)mu" "mu symbolr" A
 \mu$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "nu" "nu symbol" A
+snippet "(?<!\\)nu" "nu symbolr" A
 \nu$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "xi" "xi symbol" A
+snippet "(?<!\\)xi" "xi symbolr" A
 \xi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Xi" "Xi symbol" A
+snippet "(?<!\\)Xi" "Xi symbolr" A
 \Xi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "pi" "pi symbol" A
+snippet "(?<!\\)pi" "pi symbolr" A
 \pi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Pi" "Pi symbol" A
+snippet "(?<!\\)Pi" "Pi symbolr" A
 \Pi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "rho" "rho symbol" Ai
+snippet "(?<!\\)rho" "rho symbol" rAi
 \rho$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "vrho" "vrho symbol" Ai
+snippet "(?<!\\)vrho" "vrho symbol" rAi
 \vrho$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "sigma" "sigma symbol" Ai
+snippet "(?<!\\)sigma" "sigma symbol" rAi
 \sigma$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Sigma" "Sigma symbol" Ai
+snippet "(?<!\\)Sigma" "Sigma symbol" rAi
 \Sigma$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "tau" "tau symbol" Ai
+snippet "(?<!\\)tau" "tau symbol" rAi
 \tau$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "upsilon" "upsilon symbol" Ai
+snippet "(?<!\\)upsilon" "upsilon symbol" rAi
 \upsilon$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Upsilon" "Upsilon symbol" Ai
+snippet "(?<!\\)Upsilon" "Upsilon symbol" rAi
 \Upsilon$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "phi" "phi symbol" Ai
+snippet "(?<!\\)phi" "phi symbol" rAi
 \phi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "vphi" "vphi symbol" Ai
+snippet "(?<!\\)vphi" "vphi symbol" rAi
 \vphi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Phi" "Phi symbol" Ai
+snippet "(?<!\\)Phi" "Phi symbol" rAi
 \Phi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "chi" "chi symbol" Ai
+snippet "(?<!\\)chi" "chi symbol" rAi
 \chi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "psi" "psi symbol" Ai
+snippet "(?<!\\)psi" "psi symbol" rAi
 \psi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Psi" "Psi symbol" Ai
+snippet "(?<!\\)Psi" "Psi symbol" rAi
 \Psi$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "omega" "omega symbol" Ai
+snippet "(?<!\\)omega" "omega symbol" rAi
 \omega$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "Omega" "Omega symbol" Ai
+snippet "(?<!\\)Omega" "Omega symbol" rAi
 \Omega$0
 endsnippet
 

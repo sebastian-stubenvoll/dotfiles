@@ -58,7 +58,7 @@ nnoremap <silent> gb :bn<CR>
 nnoremap <silent> gB :bp<CR>
 
 "More accesible macro mapping
-nnoremap <leader>q @
+nnoremap m @
 
 "Alternative window bindings!
 nnoremap <leader>w <C-w>
