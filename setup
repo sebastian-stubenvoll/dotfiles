@@ -68,6 +68,7 @@ brew install khanhas/tap/spicetify-cli #might be oudated?
 brew install xdotool
 brew install dbus && brew reinstall dbus
 brew install fzf
+brew install pstree
 
 #Nerd fonts
 brew install --cask font-meslo-nerd-font
@@ -99,7 +100,14 @@ echo "Installing python..."
 #speficially use python2/python3 -m pip just to be safe
 python3 -m pip install pynvim 
 python2 -m pip install pynvim 2>/dev/null
-pip3 install neovim-remote
+python3 -m pip install neovim-remote
+python3 -m pip install rope
+
+##########
+#  node  #
+##########
+
+npm install -g neovim
 
 
 ###########

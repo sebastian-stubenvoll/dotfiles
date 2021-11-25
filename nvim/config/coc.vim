@@ -1,3 +1,15 @@
+""""""""""""""""
+"  extensions  "
+""""""""""""""""
+
+let g:coc_global_extensions = [ 'coc-snippets', 'coc-vimtex' ]
+
+
+""""""""""""""
+"  settings  "
+""""""""""""""
+
+
 " Give more space for displaying messages.
 set cmdheight=2
 
@@ -102,6 +114,10 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+
+"codeAction
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')

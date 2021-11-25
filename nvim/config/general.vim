@@ -12,6 +12,12 @@ set shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent smartindent
 set pumheight=5
 set background=dark
 
+"""""""""""""""""""""""
+"  PROVIDER SETTINGS  "
+"""""""""""""""""""""""
+
+let g:python_host_prog="/usr/bin/python"
+
 """""""""""""""""""""""""
 "  SYNTAX AND FILETYPE  "
 """""""""""""""""""""""""

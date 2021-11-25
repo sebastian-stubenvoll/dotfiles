@@ -64,13 +64,16 @@ The installation process is split into the following segments:
 | xodotool                 | brew                |
 | dbus                     | brew                |
 | fzf                      | brew                |
+| pstree                   | brew                |
 | pynvim                   | python / pip        |
 | neovim remote            | python / pip        |
+| rope                     | python / pip        |
 | oh-my-zsh                | curl + script       |
 | fast-syntax-highlighting | git                 |
 | p10k                     | git                 |
 | betterdiscord            | git                 |
 | pywal-discord            | git                 |
+| neovim (node)            | node                |
 
 If you're wanting to run this script, feel free to open it up and comment out
 the applications you don't wish to install.

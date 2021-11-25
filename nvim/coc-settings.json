@@ -7,6 +7,7 @@
     "svelte.enable-ts-plugin": true,
     "snippets.snipmate.enable": false,
     "snippets.loadFromExtensions": false,
-    "snippets.ultisnips.directories": ["~/.config/nvim/custom_snippets"]
+    "snippets.ultisnips.directories": ["~/.config/nvim/custom_snippets"],
+    "python.formatting.provider": "autopep8"
 }
 
