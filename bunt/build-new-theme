@@ -4,6 +4,7 @@ GET_WALLPAPER=true
 BACKEND=haishoku
 RESTART_SPOTIFY=true
 TAG=
+APPLY_CURRENT=false
 
 while test $# -gt 0; do
     case "$1" in
@@ -47,6 +48,9 @@ while test $# -gt 0; do
         -s|--skip-spotify-restart)
             shift
             RESTART_SPOTIFY=false ;;
+        -c|--current)
+            shift
+            APPLY_CURRENT=true;;
         *)
             break
             ;;
@@ -61,12 +65,12 @@ if [ ! $# -eq 0 ]; then
 
     cp "$1" "$DIR/wallpaper"
 
-    wal -i "$DIR/wallpaper" --backend "$BACKEND"
+    if [ "$APPLY_CURRENT" == "false" ]; then wal -i "$DIR/wallpaper" --backend "$BACKEND"; fi
 
     if [ ! $TERM = "screen-256color" ]; then imgcat --height 10 $DIR/wallpaper; fi
 
 else
-    while [ "$GET_WALLPAPER" == "true" ]
+    while [ "$GET_WALLPAPER" == "true" -a "$APPLY_CURRENT" == "false" ]
     do # fetch random wallpaper from unsplash
         echo -n "Fetching a random wallpaper..."
         wget -O "$DIR/temp" https://source.unsplash.com/random/1920x1080/?$TAG >/dev/null 2>&1
