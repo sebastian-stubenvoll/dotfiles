@@ -22,8 +22,14 @@ endsnippet
 
 priority 0
 context "math()"
-snippet SC "superscript" iA
+snippet SU "superscript" iA
 ^{$1}$0
+endsnippet
+
+priority 0
+context "math()"
+snippet SL "sub" iA
+_{$1}$0
 endsnippet
 
 priority 0
@@ -89,4 +95,9 @@ snippet int "integral" wA
 \int_\{$1\}^\{$2\}$0
 endsnippet
 
+priority 0
+context "math()"
+snippet sum "sum" wA
+\sum_\{$1\}^\{$2\}$0
+endsnippet
 # vim:ft=snippets:
