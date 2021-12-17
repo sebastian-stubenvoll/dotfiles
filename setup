@@ -99,9 +99,10 @@ echo "Brew installations complete..."
 echo "Installing python..."
 #speficially use python2/python3 -m pip just to be safe
 python3 -m pip install pynvim 
-python2 -m pip install pynvim 2>/dev/null
+python -m pip install pynvim 2>/dev/null
 python3 -m pip install neovim-remote
 python3 -m pip install rope
+python3 -m pip install spotify-cli
 
 ##########
 #  node  #

@@ -34,11 +34,21 @@ writing/note-taking in vim. Some (not all) of the features include:
 This setup intends for citation management to be done through JabRef. It is also
 installed via brew.
 
+![example_png](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/tex_example.png?raw=true)
 A fair amount of tex features/mappings also translate to markdown files,
 specifically intended for the creation of presentations in Deckset. This even
 allows you to use your math related tex snippets in MathJax environments!
 
-![example_png](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/tex_example.png?raw=true)
+Hotkeys with skhd: This includes a fair amount of yabai mappings but also other
+things such as bindings for some spotify functions. This setup also introduces a
+script called `skhs` that allows you switch between different skhd
+configurations on the fly. Personally, I use this to hotswap between a hotkey
+layout for my desktop and my laptop keyboard respectively so the motions for the
+respective keypresses remain (somewhat) consistent.
+Simply run the shell command `skhs PROFILENAME` and skhs will attempt to update
+your profile symlink to the targeted config in the `~/.config/skhd/profiles`
+directory.
+As a neat little bonus this also pushes an applescript notification.
 
 ## ❗Disclamer❗ ##
 
@@ -94,6 +104,7 @@ The installation process is split into the following segments:
 | pynvim                   | python / pip        |
 | neovim remote            | python / pip        |
 | rope                     | python / pip        |
+| spotify-cli              | python / pip        |
 | oh-my-zsh                | curl + script       |
 | fast-syntax-highlighting | git                 |
 | p10k                     | git                 |
