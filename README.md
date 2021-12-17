@@ -16,7 +16,7 @@ updates all themes on applications that use pywal colours.
 
 ![example gif](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/wal_example.gif?raw=true)
 
-A fair amount of configuration is also dedicated to allow for comfortable
+A fair amount of configuration is also dedicated to comfortable
 writing/note-taking in vim. Some (not all) of the features include:
 
 + Compiling, forwards/backwards search, table of contents etc. through Vimtex
@@ -24,11 +24,19 @@ writing/note-taking in vim. Some (not all) of the features include:
 + Only compile once with pdfTeX
 + Snippets for all sorts of things
 + More snippets, some of which are context aware
-  + For example typing `alpha` will only correct to `\alpha` inside of math
+  + For example typing `pi` will only correct to `\pi` inside of math
         environments
-+ Compiling a texfile opens the pdf in zathura (which aside from being themed to
++ Compiling a texfile opens the pdf in zathura which (aside from being themed to
     wal colours) also supports automatic refreshes.
++ Autocompletion through coc on many things – including citation references
 + ...and a bunch of other things!
+
+This setup intends for citation management to be done through JabRef. It is also
+installed via brew.
+
+A fair amount of tex features/mappings also translate to markdown files,
+specifically intended for the creation of presentations in Deckset. This even
+allows you to use your math related tex snippets in MathJax environments!
 
 ![example_png](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/tex_example.png?raw=true)
 
