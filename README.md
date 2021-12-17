@@ -14,6 +14,8 @@ updates all themes on applications that use pywal colours.
 
 ![example gif](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/themes_example.gif?raw=true)
 
+![example gif](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/wal_example.gif?raw=true)
+
 ## ❗Disclamer❗ ##
 
 This script is currently **untested** and a work in progress. Proceed at your
