@@ -16,6 +16,22 @@ updates all themes on applications that use pywal colours.
 
 ![example gif](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/wal_example.gif?raw=true)
 
+A fair amount of configuration is also dedicated to allow for comfortable
+writing/note-taking in vim. Some (not all) of the features include:
+
++ Compiling, forwards/backwards search, table of contents etc. through Vimtex
++ Spell- and grammarchecking within neovim (and correcting mistakes on the fly)
++ Only compile once with pdfTeX
++ Snippets for all sorts of things
++ More snippets, some of which are context aware
+  + For example typing `alpha` will only correct to `\alpha` inside of math
+        environments
++ Compiling a texfile opens the pdf in zathura (which aside from being themed to
+    wal colours) also supports automatic refreshes.
++ ...and a bunch of other things!
+
+![example_png](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/tex_example.png?raw=true)
+
 ## ❗Disclamer❗ ##
 
 This script is currently **untested** and a work in progress. Proceed at your
