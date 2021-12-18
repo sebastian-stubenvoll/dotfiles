@@ -77,8 +77,8 @@ ctrl + shift - m : spotify toggle
 ctrl + shift - 0x2C : spotify save -y . && osascript -e 'display notification "the current track has been added to your liked songs" with title "track saved"'
 
 #spotify volume
-ctrl + shift - 0x2B : spotify vol down
-ctrl + shift - 0x2F : spotify vol up
+ctrl + shift - 0x2B : spotify vol down 5
+ctrl + shift - 0x2F : spotify vol up 5
 
 #mktex
 ctrl + cmd - n: "${HOME}"/.config/scripts/mktex_autoname.py
