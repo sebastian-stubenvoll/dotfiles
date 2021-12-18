@@ -76,7 +76,8 @@ fn - f : yabai -m window --toggle float
 #ctrl track controls
 fn + shift - b : spotify prev
 fn + shift - n : spotify next
-fn + shift - m : spotify pause
+fn + shift - m : spotify toggle
+fn + shift - 0x2C : spotify save -y . && osascript -e 'display notification "the current track has been added to your liked songs" with title "track saved"'
 
 #spotify volume
 fn + shift - 0x2B : spotify vol down
