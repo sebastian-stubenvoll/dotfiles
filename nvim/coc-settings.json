@@ -1,4 +1,5 @@
 {
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "markdownlint.config" : {
         "default" : true,
         "headers": false,

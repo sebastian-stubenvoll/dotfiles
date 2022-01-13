@@ -170,7 +170,7 @@ endsnippet
 #############
 #  DECKSET  #
 #############
-snippet ns "New slide" bA
+snippet ns "Deckset new slide" bA
 ---
 $0
 endsnippet
@@ -187,8 +187,22 @@ slidenumbers: ${2:true|false}
 $0
 endsnippet
 
+snippet fn "Deckset footnote" i
+[^${1:Footnote}]$0
+endsnippet
+
+snippet col "Deckset column" b
+[.column]
+$0
+endsnippet
+
 snippet isec "Impactful deckset header" b
-# [fit] ${1:HEADER} #
+# [fit] ${1:Header} #
+$0
+endsnippet
+
+snippet pn "Deckset presenter note" bA
+^ ${1:Presenter note}
 $0
 endsnippet
 

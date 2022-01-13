@@ -143,8 +143,10 @@ echo -n "Quitting XQuartz..."
 killall -m Xquartz 2>/dev/null
 echo " ✔️"
 
+echo -n "Apply pywalfox theme"
+pywalfox update
+echo " ✔️"
 
-echo "You may need to fetch pywal colors in firefox."
 echo "You may need to refresh discord to apply pywal colors."
 echo "If the new discord theme didn't apply run pywal-discord-fix."
 

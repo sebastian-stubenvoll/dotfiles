@@ -1466,6 +1466,26 @@
   # Don't show the remaining time to charge/discharge.
   typeset -g POWERLEVEL9K_BATTERY_VERBOSE=false
 
+  ################################ DROPBOX #######################################################
+  prompt_dropbox() {
+    # The first column is just the directory, so cut it
+    local dropbox_status="$(dropbox-cli filestatus . | cut -d\  -f2-)"
+
+    # Only show if the folder is tracked and dropbox is running
+    if [[ "$dropbox_status" != 'unwatched' && "$dropbox_status" != "isn't running!" ]]; then
+      # If "up to date", only show the icon
+      if [[ "$dropbox_status" =~ 'up to date' ]]; then
+        dropbox_status=""
+      fi
+
+      _p9k_prompt_segment "$0" "white" "blue" "DROPBOX_ICON" 0 '' "${dropbox_status//\%/%%}"
+    fi
+  }
+
+  _p9k_prompt_dropbox_init() {
+    typeset -g "_p9k__segment_cond_${_p9k__prompt_side}[_p9k__segment_index]"='$commands[dropbox-cli]'
+  }
+
   #####################################[ wifi: wifi speed ]#####################################
   # WiFi color.
   typeset -g POWERLEVEL9K_WIFI_FOREGROUND=4

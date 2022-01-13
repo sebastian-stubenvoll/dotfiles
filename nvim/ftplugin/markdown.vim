@@ -1,4 +1,5 @@
 setlocal textwidth=80
+set nofoldenable
 
 nmap <silent> <localleader>to :Toc<CR>
 nmap <silent> <localleader>hi :HeaderIncrease<CR>

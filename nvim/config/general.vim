@@ -63,6 +63,11 @@ nnoremap <silent> <leader>bd :bd<CR>
 nnoremap <silent> gb :bn<CR>
 nnoremap <silent> gB :bp<CR>
 
+"Snippet mappings
+nnoremap <silent> <leader>sl :CocList snippets<CR>
+nnoremap <silent> <leader>se :CocCommand snippets.editSnippets<CR>
+nnoremap <silent> <leader>so :CocCommand snippets.openSnippetFiles<CR>
+
 "More accesible macro mapping
 nnoremap m @
 

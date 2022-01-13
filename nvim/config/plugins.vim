@@ -21,7 +21,6 @@ Plug 'dylanaraps/wal.vim'
 Plug 'deanashton/vim-deckset'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'mhinz/vim-startify'
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 Plug 'lervag/vimtex'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
