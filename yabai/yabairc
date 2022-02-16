@@ -36,7 +36,5 @@ yabai -m rule --add app="Zathura" opacity=1
 
 #default spaces for apps
 yabai -m rule --add app="Spotify" space="fifth"
-yabai -m rule --add app="Firefox" space="second"
-
 
 echo "yabai initialized"

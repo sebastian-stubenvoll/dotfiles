@@ -69,7 +69,10 @@ nnoremap <silent> <leader>se :CocCommand snippets.editSnippets<CR>
 nnoremap <silent> <leader>so :CocCommand snippets.openSnippetFiles<CR>
 
 "More accesible macro mapping
-nnoremap m @
+nnoremap Q @
+
+"Marks mappings
+nnoremap ß `
 
 "Alternative window bindings!
 nnoremap <leader>w <C-w>

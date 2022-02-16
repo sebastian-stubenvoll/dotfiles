@@ -31,5 +31,7 @@ Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'kshenoy/vim-signature'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()

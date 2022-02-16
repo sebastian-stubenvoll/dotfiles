@@ -1,6 +1,11 @@
 "Bindings
 nnoremap <silent> <C-b> :Buffers<CR>
 nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-s> :Snippets<CR>
+nnoremap <silent> <C-w> :Windows<CR>
+nnoremap <silent> <C-m> :Marks<CR>
+nnoremap <silent> <C-t> :Tabs<CR>
+inoremap <silent> <C-s> <C-\><C-O>:Snippets<CR>
 
 "Colours
 let g:fzf_colors =                                                                         

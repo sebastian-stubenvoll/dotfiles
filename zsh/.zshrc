@@ -132,3 +132,6 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 #Android SDK
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+#PICO Skd
+export PICO_SDK_PATH="${HOME}/Documents/projects/pico-sdk"
