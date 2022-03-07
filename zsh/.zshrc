@@ -73,7 +73,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fast-syntax-highlighting colored-man-pages copydir tmux copyfile jsontools zsh-autosuggestions virtualenv virtualenvwrapper)
+plugins=(git fast-syntax-highlighting colored-man-pages copypath tmux copyfile jsontools zsh-autosuggestions virtualenv virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
