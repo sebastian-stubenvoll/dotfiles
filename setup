@@ -69,6 +69,7 @@ brew install xdotool
 brew install dbus && brew reinstall dbus
 brew install fzf
 brew install pstree
+brew install --cask ubersicht
 
 #Nerd fonts
 brew install --cask font-meslo-nerd-font
@@ -138,6 +139,9 @@ cd BetterDiscord && npm install
 npm run build
 npm run inject
 cd .. & rm -r BetterDiscord
+
+#simple-bar
+git clone https://github.com/Jean-Tinland/simple-bar $HOME/Library/Application\ Support/Übersicht/widgets/simple-bar
 
 ############################
 #  copy files and symlink  #

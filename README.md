@@ -101,6 +101,7 @@ The installation process is split into the following segments:
 | dbus                     | brew                |
 | fzf                      | brew                |
 | pstree                   | brew                |
+| übersicht                | brew                |
 | pynvim                   | python / pip        |
 | neovim remote            | python / pip        |
 | rope                     | python / pip        |
@@ -110,6 +111,7 @@ The installation process is split into the following segments:
 | p10k                     | git                 |
 | betterdiscord            | git                 |
 | pywal-discord            | git                 |
+| simple-bar               | git                 |
 | neovim (node)            | node                |
 
 If you're wanting to run this script, feel free to open it up and comment out

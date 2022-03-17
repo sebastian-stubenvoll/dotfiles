@@ -147,6 +147,12 @@ echo -n "Apply pywalfox theme"
 pywalfox update
 echo " ✔️"
 
+echo -n "Apply pywal colours to simple-bar"
+~/Library/Application\ Support/Übersicht/widgets/simple-bar/lib/styles/pywal/pywal-gen.sh
+osascript -e 'tell application "Übersicht" to refresh'
+echo " ✔️"
+
+
 echo "You may need to refresh discord to apply pywal colors."
 echo "If the new discord theme didn't apply run pywal-discord-fix."
 
