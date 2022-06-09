@@ -1,9 +1,11 @@
 .DS_Store
 .mono
 .oh-my-zsh
+/Autodesk/
 /bunt/wallpaper
 /coc/
 /configstore/
+/github-copilot/
 /htop/
 /iterm2/AppSupport
 /neofetch/

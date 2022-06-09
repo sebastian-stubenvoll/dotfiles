@@ -149,7 +149,6 @@ echo " ✔️"
 
 echo -n "Apply pywal colours to simple-bar"
 ~/Library/Application\ Support/Übersicht/widgets/simple-bar/lib/styles/pywal/pywal-gen.sh
-osascript -e 'tell application "Übersicht" to refresh'
 echo " ✔️"
 
 

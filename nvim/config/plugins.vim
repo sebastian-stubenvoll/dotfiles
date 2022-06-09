@@ -33,5 +33,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature'
 Plug 'rust-lang/rust.vim'
+Plug 'github/copilot.vim'
 
 call plug#end()
