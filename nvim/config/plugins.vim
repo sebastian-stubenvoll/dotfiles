@@ -1,7 +1,5 @@
 call plug#begin()
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'hdima/python-syntax'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
@@ -13,7 +11,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yggdroot/indentline'
 Plug 'honza/vim-snippets'
 Plug 'artur-shaik/vim-grammarous', {'branch': 'byte-to-char'}
@@ -27,12 +24,20 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'leafOfTree/vim-svelte-plugin'
-Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature'
-Plug 'rust-lang/rust.vim'
 Plug 'github/copilot.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'onsails/lspkind.nvim'
+Plug 'VonHeikemen/lsp-zero.nvim'
+Plug 'L3MON4D3/LuaSnip'
 
 call plug#end()

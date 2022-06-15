@@ -11,6 +11,7 @@ set hidden
 set shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent smartindent
 set pumheight=5
 set background=dark
+set signcolumn=yes:2
 
 """""""""""""""""""""""
 "  PROVIDER SETTINGS  "
@@ -40,9 +41,11 @@ autocmd vimenter * ++nested set conceallevel=2
 autocmd vimenter * ++nested set concealcursor=""
 
 "CursorLine highglighting doesn't look to good with a lot of wal schemes
+"NormalFloat fixes the ugly background floating windows
 augroup MyColors
     autocmd!
     autocmd ColorScheme * highlight CursorLine cterm=italic ctermfg=7 ctermbg=0 guibg=Grey40
+    autocmd ColorScheme * highlight NormalFloat ctermbg=0
 augroup END
 
 """"""""""""""
