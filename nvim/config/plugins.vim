@@ -1,6 +1,5 @@
 call plug#begin()
 
-Plug 'hdima/python-syntax'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-repeat'
@@ -38,6 +37,5 @@ Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'onsails/lspkind.nvim'
 Plug 'VonHeikemen/lsp-zero.nvim'
-Plug 'L3MON4D3/LuaSnip'
 
 call plug#end()
