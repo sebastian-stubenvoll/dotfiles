@@ -16,3 +16,4 @@ source $HOME/.config/nvim/config/vim-markdown.vim
 source $HOME/.config/nvim/config/vimtex.vim
 source $HOME/.config/nvim/config/fzf.vim
 source $HOME/.config/nvim/config/lsp.vim
+source $HOME/.config/nvim/config/treesitter.vim
