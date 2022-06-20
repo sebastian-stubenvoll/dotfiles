@@ -7,6 +7,7 @@ local util = {}
 
 local lsp_install = require('nvim-lsp-installer')
 local lspconfig = require('lspconfig')
+require('rust-tools').setup({})
 
 local lsp_keymaps = function(bufnr)
   local map = function(m, lhs, rhs)
@@ -27,8 +28,8 @@ local lsp_keymaps = function(bufnr)
 
   -- Diagnostics
   map('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<cr>')
-  map('n', '<leader>dd', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-  map('n', '<leader>dD', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+  map('n', '<leader>dD', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+  map('n', '<leader>dd', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 end
 
 local lsp_diagnostic = function()
@@ -121,6 +122,7 @@ end
 -- cmp setup
 
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
@@ -153,10 +155,15 @@ local cmp_config = {
   },
   formatting = {
     fields = {'abbr', 'menu', 'kind'},
-    format = function(entry, item)
+    format = lspkind.cmp_format({
+      mode = 'text_symbol',
+      maxwidth = 50,
+    }),
+    before = function(entry, item)
       local short_name = {
         nvim_lsp = 'LSP',
-        nvim_lua = 'nvim'
+        nvim_lua = 'nvim',
+        ultisnips = 'snippet',
       }
 
       local menu_name = short_name[entry.source.name] or entry.source.name
@@ -273,6 +280,7 @@ autocmd('FileType', {
   end
 })
 
+
 ---
 -- Utility functions
 ---
@@ -301,6 +309,7 @@ util.read_file = function(path)
   assert(uv.fs_close(fd))
   return contents
 end
+
 
 init_servers()
 

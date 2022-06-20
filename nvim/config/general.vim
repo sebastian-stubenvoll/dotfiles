@@ -11,7 +11,6 @@ set hidden
 set shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent smartindent
 set pumheight=5
 set background=dark
-set signcolumn=yes:2
 
 """""""""""""""""""""""
 "  PROVIDER SETTINGS  "
