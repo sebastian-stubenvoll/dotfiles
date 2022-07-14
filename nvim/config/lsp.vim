@@ -7,7 +7,21 @@ local util = {}
 
 local lsp_install = require('nvim-lsp-installer')
 local lspconfig = require('lspconfig')
-require('rust-tools').setup({})
+
+local rust_tools_opts = {
+  tools = { 
+    autoSetHints = true,
+    hover_with_actions = true,
+    inlay_hints = {
+      only_current_line = false,
+      show_parameter_hints = true,
+	  show_variable_name = false,
+	  parameter_hints_prefix = " ",
+	  other_hints_prefix = " ",
+	  highlight = "String",
+    },
+  },
+}
 
 local lsp_keymaps = function(bufnr)
   local map = function(m, lhs, rhs)
@@ -27,9 +41,9 @@ local lsp_keymaps = function(bufnr)
   map('x', '<leader>a', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
 
   -- Diagnostics
-  map('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<cr>')
-  map('n', '<leader>dD', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-  map('n', '<leader>dd', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+  map('n', 'J', '<cmd>lua vim.diagnostic.open_float()<cr>')
+  map('n', 'H', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+  map('n', 'L', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 end
 
 local lsp_diagnostic = function()
@@ -114,8 +128,28 @@ local init_servers = function()
   lsp_install.setup({})
 
   for _, server in pairs(lsp_install.get_installed_servers()) do
-    util.update_state(server)
-    lsp_setup(server, {})
+    if server.name == "rust_analyzer" then
+      rust_tools_opts.server = {}
+      rust_tools_opts.server.capabilities = lsp_capabilities
+
+      rust_tools_opts.server.on_attach = function(client, bufnr)
+        lsp_keymaps(bufnr)
+        local buf_command = vim.api.nvim_buf_create_user_command
+
+        buf_command(bufnr, 'LspFormat', function()
+          vim.lsp.buf.formatting()
+        end, {desc = 'Format buffer with language server'})
+
+        buf_command(bufnr, 'LspWorkspaceRemove', function()
+          vim.lsp.buf.remove_workspace_folder()
+        end, {desc = 'Remove folder from workspace'})
+      end
+
+      require("rust-tools").setup(rust_tools_opts)
+    else
+      util.update_state(server)
+      lsp_setup(server, {})
+    end
   end
 end
 
