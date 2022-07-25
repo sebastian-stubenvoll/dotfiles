@@ -1,0 +1,1 @@
+/Users/sebastian/Documents/projects/Spicetify-Genre/genre.js

@@ -70,6 +70,7 @@ brew install dbus && brew reinstall dbus
 brew install fzf
 brew install pstree
 brew install --cask ubersicht
+brew install ctags
 
 #Nerd fonts
 brew install --cask font-meslo-nerd-font
