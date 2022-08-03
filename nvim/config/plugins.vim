@@ -3,14 +3,11 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-repeat'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
-Plug 'yggdroot/indentline'
 Plug 'honza/vim-snippets'
 Plug 'artur-shaik/vim-grammarous', {'branch': 'byte-to-char'}
 Plug 'dylanaraps/wal.vim'
@@ -39,5 +36,7 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'onsails/lspkind.nvim'
 Plug 'VonHeikemen/lsp-zero.nvim'
 Plug 'simrat39/rust-tools.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
