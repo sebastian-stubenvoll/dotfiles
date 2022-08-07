@@ -1,11 +1,10 @@
 call plug#begin()
 
-Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-repeat'
-Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -18,10 +17,10 @@ Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 Plug 'lervag/vimtex'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'jiangmiao/auto-pairs'
-Plug 'kshenoy/vim-signature'
+Plug 'windwp/nvim-autopairs'
+Plug 'chentoast/marks.nvim'
 Plug 'SirVer/ultisnips'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
@@ -38,5 +37,6 @@ Plug 'VonHeikemen/lsp-zero.nvim'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'simrat39/symbols-outline.nvim'
 
 call plug#end()
