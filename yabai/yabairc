@@ -1,3 +1,6 @@
+#load scripting-addon (requires sudoers file with up-to-date hash)
+sudo yabai --load-sa
+
 #layout
 yabai -m config layout bsp
 yabai -m config window_shadow float
