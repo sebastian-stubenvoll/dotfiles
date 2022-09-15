@@ -38,5 +38,6 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'simrat39/symbols-outline.nvim'
+Plug 'leafOfTree/vim-svelte-plugin'
 
 call plug#end()
