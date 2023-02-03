@@ -1,0 +1,32 @@
+priority 0
+snippet sitzung "Uni Sitzung" bA
+\\begin{flushright}
+    \\fbox{
+        $1. Sitzung
+    }
+\\end{flushright}
+
+\\begin{table}[htpb]
+    \\centering
+    \\label{tab:Inhalt}
+    \\begin{tabular}{c}
+    Inhalt \\\\ \\hline
+	$2
+    \\end{tabular}
+\\end{table}
+$0
+endsnippet
+
+priority 0
+snippet beispiel "Beispiel" bA
+\\textbf{Beispiel: $1} \\\\
+\\fbox{
+\\noindent
+    \\begin{minipage}{0.967\\linewidth}
+		$2
+    \\end{minipage}
+}
+$0
+endsnippet
+
+

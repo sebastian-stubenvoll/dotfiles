@@ -14,4 +14,4 @@ echo "# temporary zathura config" > "$zathura_tmp/zathurarc"
 # add the colors
 genzathurarc >> "$zathura_tmp/zathurarc"
 PATH="/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/"
-zathura --config-dir="$zathura_tmp" "$@" &
+zathura -p "/usr/local/lib/zathura/" --config-dir="$zathura_tmp" "$@" &

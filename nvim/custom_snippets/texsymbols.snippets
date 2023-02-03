@@ -2,7 +2,6 @@ global !p
 def math():
     return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 endglobal
-
 #################
 # GREEK SYMBOLS #
 #################
@@ -240,55 +239,49 @@ endsnippet
 ######################
 priority 0
 context "math()"
-snippet "letter" "mathbb for domain letters" Ai
+snippet letter "mathbb for domain letters" Ai
 \mathbb{$1}$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "inf" "infinity symbol" Ai
+snippet inf "infinity symbol" Ai
 \infty
 endsnippet
 
 priority 0
 context "math()"
-snippet "nabla" "nabla symbol" Ai
+snippet nabla "nabla symbol" Ai
 \nabla$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "forall" "forall symbol" Ai
+snippet forall "forall symbol" Ai
 \forall$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "exist" "exists symbol" Ai
+snippet exist "exists symbol" Ai
 \exists$0
 endsnippet
 
 priority 1
 context "math()"
-snippet "nexist" "nexists symbol" Ai
+snippet nexist "nexists symbol" Ai
 \nexists$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "partial" "partial symbol" Ai
+snippet part "partial symbol" Ai
 \partial$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "part" "partial symbol" Ai
-\partial$0
-endsnippet
-
-priority 0
-context "math()"
-snippet "neg" "neg symbol" Ai
+snippet neg "neg symbol" Ai
 \neg$0
 endsnippet
 
@@ -300,120 +293,163 @@ endsnippet
 
 priority 0
 context "math()"
-snippet "emptyset" "empty set symbol" Ai
+snippet emptyset "empty set symbol" Ai
 \emptyset$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "tms" "times symbol" Ai
+snippet tms "times symbol" Ai
 \times$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "cap" "cap symbol" Ai
+snippet cap "cap symbol" Ai
 \cap$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "cup" "cup symbol" Ai
+snippet cup "cup symbol" Ai
 \cup$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "neq" "not equal symbol" Ai
+snippet neq "not equal symbol" Ai
 \neq$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "notequal" "not equal symbol" Ai
+snippet notequal "not equal symbol" Ai
 \neq$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "nequal" "not equal symbol" Ai
+snippet nequal "not equal symbol" Ai
 \neq$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "leq" "less or equal symbol" Ai
+snippet leq "less or equal symbol" Ai
 \leq$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "geq" "greater or equal symbol" Ai
+snippet geq "greater or equal symbol" Ai
 \geq$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "lin" "in symbol" A
+snippet lin "in symbol" Ai
 \in$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "lnotin" "not in symbol" Ai
+snippet lnotin "not in symbol" Ai
 \notin$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "subset" "subset symbol" Ai
+snippet subset "subset symbol" Ai
 \subset$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "simeq" "similar equal symbol" Ai
+snippet simeq "similar equal symbol" Ai
 \simeq$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "approx" "approx symbol" Ai
+snippet approx "approx symbol" Ai
 \approx$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "lor" "logical or" Ai
+snippet lor "logical or" Ai
 \wedge$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "land" "logical and" Ai
+snippet land "logical and" Ai
 \vee$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "equiv" "equiv symbol" Ai
+snippet equiv "equiv symbol" Ai
 \equiv$0
 endsnippet
 
 priority 0
 context "math()"
-snippet "box" "box symbol" Ai
+snippet box "box symbol" Ai
 \Box$0
 endsnippet
 
 priority 0
-snippet "=>" "implies" Ai
-\impliesi$0
+context "math()"
+snippet "=>" "implies" rA
+\implies$0
 endsnippet
 
 priority 0
-snippet "<=" "implied by" Ai
+context "math()"
+snippet "<=" "implied by" rA
 \impliedby$0
 endsnippet
 
+priority 0
+context "math()"
+snippet "lar" "left arrow" rA
+\leftarrow$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "rar" "right arrow" rA
+\rightarrow$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "lra" "left right arrow" rA
+\leftrightarrow$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "unit" "left right arrow" rA
+\unit{$1}$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "cos" "cosine" rA
+\cos$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "sin" "sine" rA
+\sin$0
+endsnippet
+
+priority 0
+context "math()"
+snippet "tan" "tangent" rA
+\tan$0
+endsnippet
 ## vim:ft=snippets:

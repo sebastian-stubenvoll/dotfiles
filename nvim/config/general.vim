@@ -46,7 +46,11 @@ augroup MyColors
     autocmd!
     autocmd ColorScheme * highlight CursorLine cterm=italic ctermfg=7 ctermbg=0 guibg=Grey40
     autocmd ColorScheme * highlight NormalFloat ctermbg=0
+    autocmd ColorScheme * highlight! link TreesitterContext Search
+    autocmd ColorScheme * highlight! link TreesitterContextLineNumber Search
+    autocmd ColorScheme * highlight! link VertSplit Comment
 augroup END
+
 
 """"""""""""""
 "  MAPPINGS  "

@@ -1,2 +1,2 @@
-colorscheme wal
+colorscheme pywal
 

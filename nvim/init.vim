@@ -22,3 +22,4 @@ source $HOME/.config/nvim/config/lsp.vim
 source $HOME/.config/nvim/config/surround.lua
 source $HOME/.config/nvim/config/symbols-outline.vim
 source $HOME/.config/nvim/config/treesitter.vim
+source $HOME/.config/nvim/config/treesitter-context.lua

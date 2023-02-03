@@ -11,7 +11,6 @@ local lspconfig = require('lspconfig')
 local rust_tools_opts = {
   tools = { 
     autoSetHints = true,
-    hover_with_actions = true,
     inlay_hints = {
       only_current_line = false,
       show_parameter_hints = true,
@@ -63,7 +62,7 @@ local lsp_diagnostic = function()
   vim.diagnostic.config({
     virtual_text = true,
     signs = false,
-    update_in_insert = true,
+    update_in_insert = false,
     underline = true,
     severity_sort = true,
     float = {
@@ -172,10 +171,10 @@ local cmp_config = {
     end,
   },
   sources = {
+    {name = 'ultisnips', keyword_length = 2},
     {name = 'path'},
     {name = 'nvim_lsp', keyword_length = 3},
     {name = 'buffer', keyword_length = 3},
-    {name = 'ultisnips', keyword_length = 2},
   },
   window = {
     documentation = vim.tbl_deep_extend(
@@ -188,7 +187,7 @@ local cmp_config = {
     )
   },
   formatting = {
-    fields = {'abbr', 'menu', 'kind'},
+    fields = {'abbr', 'kind', 'menu'},
     format = lspkind.cmp_format({
       mode = 'text_symbol',
       maxwidth = 50,

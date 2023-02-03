@@ -1,10 +1,10 @@
 local custom_pywal = require 'lualine.themes.pywal'
-custom_pywal.normal.a.fg = nil
-custom_pywal.normal.c.bg = nil
-custom_pywal.insert.a.fg = nil
-custom_pywal.visual.a.fg = nil
-custom_pywal.replace.a.fg = nil
-custom_pywal.inactive.c.bg = nil
+-- custom_pywal.normal.a.fg = nil
+-- custom_pywal.normal.c.bg = nil
+-- custom_pywal.insert.a.fg = nil
+-- custom_pywal.visual.a.fg = nil
+-- custom_pywal.replace.a.fg = nil
+-- custom_pywal.inactive.c.bg = nil
 
 require('lualine').setup {
   options = {
@@ -28,24 +28,9 @@ require('lualine').setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch' },
-    lualine_c = { 'filename', {
-      'diff', diff_color = {
-        -- Same color values as the general color option can be used here.
-        added    = 'DiffAdd', -- Changes the diff's added color
-        modified = 'DiffChange', -- Changes the diff's modified color
-        removed  = 'DiffDelete', -- Changes the diff's removed color you
-      }
-    } },
-    lualine_x = { {
-      'diagnostics',
-      diagnostics_color = {
-        -- Same values as the general color option can be used here.
-        error = 'DiagnosticError', -- Changes diagnostics' error color.
-        warn  = 'DiagnosticWarn', -- Changes diagnostics' warn color.
-        info  = 'DiagnosticInfo', -- Changes diagnostics' info color.
-        hint  = 'DiagnosticHint', -- Changes diagnostics' hint color.
-      },
-    }, 'encoding', 'fileformat', {
+    lualine_c = { 'filename', 'diff', 'nvim_treesitter#statusline()' },
+    lualine_x = {
+      'diagnostics', 'encoding', 'fileformat', {
       'filetype',
       colored = false
     },
@@ -56,13 +41,7 @@ require('lualine').setup {
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = { 'filename', {
-      'diff', diff_color = {
-        -- Same color values as the general color option can be used here.
-        added    = 'DiffAdd', -- Changes the diff's added color
-        modified = 'DiffChange', -- Changes the diff's modified color
-        removed  = 'DiffDelete', -- Changes the diff's removed color you
-      }}
+    lualine_c = { 'filename', 'diff'
     },
     lualine_x = { 'location' },
     lualine_y = {},
@@ -74,7 +53,7 @@ require('lualine').setup {
       {
         'buffers',
         symbols = {
-          modified = ' ●', -- Text to show when the buffer is modified
+          modified = ' +', -- Text to show when the buffer is modified
           alternate_file = '', -- Text to show to identify the alternate file
           directory = '', -- Text to show when the buffer is a directory
         }
@@ -85,5 +64,5 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = { 'tabs' }
   },
-  extensions = { 'symbols-outline', 'fzf' }
+  extensions = { 'fzf', 'fugitive', 'quickfix' }
 }

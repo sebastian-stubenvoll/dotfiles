@@ -34,7 +34,7 @@ endsnippet
 
 priority 0
 context "math()"
-snippet // "Fraction" i
+snippet frac "Fraction" i
 \\frac{$1}{$2}$0
 endsnippet
 
@@ -100,4 +100,22 @@ context "math()"
 snippet sum "sum" wA
 \sum_\{$1\}^\{$2\}$0
 endsnippet
+
+priority 0
+context "math()"
+snippet lim "limit" wA
+\lim_\{$1\}^\{$2\}$0
+endsnippet
+
+priority 0
+context "math()"
+snippet prod "product" wA
+\prod_\{$1\}^\{$2\}$0
+endsnippet
+
+context "math()"
+priority 0
+snippet elb "Label" A
+\label{eq:$1} $0
+
 # vim:ft=snippets:

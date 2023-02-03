@@ -8,7 +8,7 @@ yabai -m config window_shadow float
 #transparancy
 yabai -m config window_opacity on
 yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.85
+yabai -m config normal_window_opacity 0.9
 
 
 #gaps and padding
@@ -25,6 +25,23 @@ yabai -m rule --add app="choose" manage=off
 yabai -m rule --add app="Spotify" manage=on
 yabai -m rule --add app="Finder" manage=on
 yabai -m rule --add app="Zathura" opacity=1
+
+#nibar rules
+yabai -m signal --add event=space_changed \
+    action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"nibar-spaces-jsx\"'"
+
+yabai -m signal --add event=display_changed \
+    action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"nibar-spaces-jsx\"'"
+
+# add these rules to auto-update the "windows" widget
+yabai -m signal --add event=window_focused \
+    action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"nibar-windows-jsx\"'"
+yabai -m signal --add event=window_destroyed \
+    action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"nibar-windows-jsx\"'"
+yabai -m signal --add event=window_created \
+    action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"nibar-windows-jsx\"'"
+yabai -m signal --add event=space_changed \
+    action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"nibar-windows-jsx\"'"
 
 
 echo "yabai initialized"
