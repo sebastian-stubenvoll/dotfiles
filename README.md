@@ -103,6 +103,7 @@ The installation process is split into the following segments:
 | pstree                   | brew                |
 | übersicht                | brew                |
 | ctags                    | brew                |
+| ripgrep                  | brew                |
 | pynvim                   | python / pip        |
 | neovim remote            | python / pip        |
 | rope                     | python / pip        |
