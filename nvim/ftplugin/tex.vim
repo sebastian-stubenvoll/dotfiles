@@ -15,3 +15,5 @@ nmap <silent> <localleader>c <plug>(vimtex-clean)
 nmap <silent> <localleader>C <plug>(vimtex-clean-full)
 nmap <silent> <localleader>q <plug>(vimtex-stop)
 nmap <silent> <localleader>Q <plug>(vimtex-stop-all)
+
+source $HOME/.config/nvim/config/vimtex.vim

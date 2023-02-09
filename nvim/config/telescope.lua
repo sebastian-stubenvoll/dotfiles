@@ -34,6 +34,7 @@ require('telescope').setup {
     }
 }
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('bibtex')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})

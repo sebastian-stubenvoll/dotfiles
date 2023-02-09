@@ -20,6 +20,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'fhill2/telescope-ultisnips.nvim'
+Plug 'nvim-telescope/telescope-bibtex.nvim'
 
 "Cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -58,10 +59,5 @@ Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 Plug 'artur-shaik/vim-grammarous', {'branch': 'byte-to-char'}
 Plug 'deanashton/vim-deckset'
 Plug 'plasticboy/vim-markdown'
-
-
-
-
-
 
 call plug#end()
