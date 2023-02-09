@@ -1,6 +1,4 @@
-""""""""""""""""""""""
-"  GENERIC SETTINGS  "
-""""""""""""""""""""""
+"Generic settings
 set nu
 set nocompatible
 set relativenumber
@@ -11,50 +9,18 @@ set hidden
 set shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent smartindent
 set pumheight=5
 set background=dark
-set signcolumn=yes:2
+set completeopt=menu,menuone,noselect
+set mouse=
+set fillchars=stl:  "this contains an em space!
+set signcolumn=yes:1
 
-"""""""""""""""""""""""
-"  PROVIDER SETTINGS  "
-"""""""""""""""""""""""
-
+"Provider settings
 let g:python_host_prog="/usr/bin/python"
 
-"""""""""""""""""""""""""
-"  SYNTAX AND FILETYPE  "
-"""""""""""""""""""""""""
+"Syntax settings
 syntax on
 filetype plugin indent on
 
-"""""""""""""
-"  VISUALS  "
-"""""""""""""
-"Text Highlighting
-autocmd vimenter * ++nested hi clear SpellBad 
-autocmd vimenter * ++nested hi SpellBad  ctermfg=9  guifg=#fb4934 gui=undercurl
-autocmd vimenter * ++nested hi clear texItalStyle
-autocmd vimenter * ++nested hi texItalStyle gui=italic 
-autocmd vimenter * ++nested hi clear texBoldStyle
-autocmd vimenter * ++nested hi texBoldStyle gui=bold
-
-"Text conceal
-autocmd vimenter * ++nested set conceallevel=2
-autocmd vimenter * ++nested set concealcursor=""
-
-"CursorLine highglighting doesn't look to good with a lot of wal schemes
-"NormalFloat fixes the ugly background floating windows
-augroup MyColors
-    autocmd!
-    autocmd ColorScheme * highlight CursorLine cterm=italic ctermfg=7 ctermbg=0 guibg=Grey40
-    autocmd ColorScheme * highlight NormalFloat ctermbg=0
-    autocmd ColorScheme * highlight! link TreesitterContext Search
-    autocmd ColorScheme * highlight! link TreesitterContextLineNumber Search
-    autocmd ColorScheme * highlight! link VertSplit Comment
-augroup END
-
-
-""""""""""""""
-"  MAPPINGS  "
-""""""""""""""
 "Unbind # so localleader timeout doesn't randomly highlight stuff
 noremap # <Nop>
 
@@ -100,3 +66,19 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
+
+"Text Highlighting
+autocmd vimenter * ++nested hi clear SpellBad 
+autocmd vimenter * ++nested hi SpellBad  ctermfg=9  guifg=#fb4934 gui=undercurl
+autocmd vimenter * ++nested hi clear texItalStyle
+autocmd vimenter * ++nested hi texItalStyle gui=italic 
+autocmd vimenter * ++nested hi clear texBoldStyle
+autocmd vimenter * ++nested hi texBoldStyle gui=bold
+
+"Text conceal
+autocmd vimenter * ++nested set conceallevel=2
+autocmd vimenter * ++nested set concealcursor=""
+
+autocmd vimenter * ++nested hi! link VertSplit Comment
+
+

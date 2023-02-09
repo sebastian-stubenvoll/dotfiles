@@ -1,44 +1,67 @@
 call plug#begin()
 
-Plug 'kylechui/nvim-surround'
-Plug 'preservim/nerdcommenter'
-Plug 'tpope/vim-repeat'
-Plug 'morhetz/gruvbox'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'tpope/vim-fugitive'
+"LSP related
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'j-hui/fidget.nvim'
+
+"Ultisnips
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'artur-shaik/vim-grammarous', {'branch': 'byte-to-char'}
-Plug 'dylanaraps/wal.vim'
-Plug 'deanashton/vim-deckset'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
-Plug 'lervag/vimtex'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'windwp/nvim-autopairs'
-Plug 'chentoast/marks.nvim'
-Plug 'SirVer/ultisnips'
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'hrsh7th/nvim-cmp'
+
+"Tresitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/nvim-treesitter-context'
+
+"Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'fhill2/telescope-ultisnips.nvim'
+
+"Cmp
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'onsails/lspkind.nvim'
-Plug 'VonHeikemen/lsp-zero.nvim'
-Plug 'simrat39/rust-tools.nvim'
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'kdheepak/cmp-latex-symbols'
+
+"Tmux navigator
+Plug 'christoomey/vim-tmux-navigator'
+
+"Appearance
 Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
+"QoL features
+Plug 'preservim/nerdcommenter'
+Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'kylechui/nvim-surround'
+Plug 'lukas-reineke/indent-blankline.nvim'
+
+"Git
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'lewis6991/gitsigns.nvim'
+
+"Language specific
+Plug 'simrat39/rust-tools.nvim'
+Plug 'lervag/vimtex'
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+Plug 'artur-shaik/vim-grammarous', {'branch': 'byte-to-char'}
+Plug 'deanashton/vim-deckset'
+Plug 'plasticboy/vim-markdown'
+
+
+
+
+
 
 call plug#end()

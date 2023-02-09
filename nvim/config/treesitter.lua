@@ -1,3 +1,27 @@
+require'nvim-treesitter.configs'.setup {
+    auto_install = true,
+    highlight = { enable = true },
+    indent = { enable = true },
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+                ["ab"] = "@block.outer",
+                ["ib"] = "@block.inner",
+                ["al"] = "@loop.outer",
+                ["il"] = "@loop.inner",
+                ["ai"] = "@conditional.outer",
+                ["ii"] = "@conditional.inner",
+            },
+        },
+    }
+}
+
 require'treesitter-context'.setup{
     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
     max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
@@ -74,3 +98,4 @@ require'treesitter-context'.setup{
     -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
     separator = ' ',
 }
+

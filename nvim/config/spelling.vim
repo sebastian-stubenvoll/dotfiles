@@ -43,3 +43,4 @@ nmap <leader>gp <Plug>(grammarous-move-to-previous-error)
 nnoremap <silent> <expr> <leader>gg GetGrammarousLang()
 nnoremap <leader>lf z=
 
+

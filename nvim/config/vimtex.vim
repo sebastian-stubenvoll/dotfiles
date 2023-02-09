@@ -22,3 +22,4 @@ let g:vimtex_quickfix_ignore_filters = [
     \'Overfull \\hbox ([0-9]*.[0-9]*pt too wide) in '
     \'LaTeX hooks Warning'
 \]
+
