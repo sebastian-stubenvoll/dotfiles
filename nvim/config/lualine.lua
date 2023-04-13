@@ -24,7 +24,7 @@ require('lualine').setup {
         lualine_x = {
             'diagnostics', 'filesize', 'fileformat', {
                 'filetype',
-                colored = false
+                colored = true
             },
         },
         lualine_y = { 'progress' },
