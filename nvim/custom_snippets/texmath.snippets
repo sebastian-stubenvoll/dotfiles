@@ -4,7 +4,6 @@ def math():
 endglobal
 
 
-
 ##############
 # MATH STUFF #
 ##############
@@ -119,4 +118,44 @@ snippet elb "Label" A
 \label{eq:$1} $0
 endsnippet
 
+context "math()"
+priority 0
+snippet pmx "pmatrix" wA
+\begin{pmatrix}
+	$1
+\end{pmatrix}
+$0
+endsnippet
+
+context "math()"
+priority 0
+snippet bmx "bmatrix" wA
+\begin{bmatrix}
+	$1
+\end{bmatrix}
+$0
+endsnippet
+
+context "math()"
+priority 0
+snippet cmx "cmatrix" wA
+\begin{Bmatrix}
+	$1
+\end{Bmatrix}
+$0
+endsnippet
+
+context "math()"
+priority 10
+snippet __ "new line" wA
+\\\\
+$0
+endsnippet
+
+context "math()"
+priority 0
+snippet __ "new line" iA
+\\\\
+$0
+endsnippet
 # vim:ft=snippets:

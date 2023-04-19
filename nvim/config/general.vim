@@ -67,6 +67,10 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
+"Unmap snippet jump keys
+inoremap <C-ö> <Nop>
+inoremap <C-ä> <Nop>
+
 "Text Highlighting
 autocmd vimenter * ++nested hi clear SpellBad 
 autocmd vimenter * ++nested hi SpellBad  ctermfg=9  guifg=#fb4934 gui=undercurl

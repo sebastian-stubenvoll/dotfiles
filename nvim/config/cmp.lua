@@ -1,5 +1,6 @@
 -- Set up nvim-cmp.
 local cmp = require'cmp'
+local cmp_ultisnips_mappings = require'cmp_nvim_ultisnips.mappings'
 local lspkind = require'lspkind'
 
 cmp.setup({
@@ -28,9 +29,19 @@ cmp.setup({
         ['<C-g>'] = cmp.mapping.scroll_docs(4),
         ['<C-e>'] = cmp.mapping.abort(),
         -- confirm selection
-        ['<TAB>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-
-
+        ['<TAB>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<C-ö>'] = cmp.mapping(
+            function(fallback)
+                cmp_ultisnips_mappings.jump_backwards(fallback)
+            end,
+            { "i", "s" }
+        ),
+        ['<C-ä>'] = cmp.mapping(
+            function(fallback)
+                cmp_ultisnips_mappings.jump_forwards(fallback)
+            end,
+            { "i", "s" }
+        ),
         -- navigate items on the list
         ['<C-k>'] = cmp.mapping.select_prev_item(),
         ['<C-j>'] = cmp.mapping.select_next_item(),

@@ -22,7 +22,7 @@ require('lualine').setup {
         lualine_b = { 'branch' },
         lualine_c = { "filename", "diff" },
         lualine_x = {
-            'diagnostics', 'filesize', 'fileformat', {
+            'diagnostics', 'filesize', 'fileformat', '%{&spelllang}', {
                 'filetype',
                 colored = true
             },
