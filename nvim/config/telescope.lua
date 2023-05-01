@@ -1,6 +1,6 @@
 require('telescope').setup {
     defaults = {
-        color_devicons = false,
+        color_devicons = true,
         mappings = {
             i = {
                 ["<C-h>"] = "which_key",
@@ -41,10 +41,12 @@ vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<C-b>', builtin.buffers, {})
 vim.keymap.set('n', '<leader>tm', builtin.marks, {})
 vim.keymap.set('n', '<C-m>', builtin.marks, {})
-vim.keymap.set('n', '<leader>ts', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>tl', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>tt', builtin.treesitter, {})
 vim.keymap.set('n', '<leader>tk', builtin.keymaps, {})
 vim.keymap.set('n', '<leader>tgb', builtin.git_branches, {})
 vim.keymap.set('n', '<leader>tgc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>tgs', builtin.git_stash, {})
+vim.keymap.set('n', '<leader>ts', builtin.symbols, {})
+vim.keymap.set('i', '<C-s>', builtin.symbols, {})

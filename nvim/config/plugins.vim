@@ -21,6 +21,7 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
+Plug 'nvim-telescope/telescope-symbols.nvim'
 
 "Cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
