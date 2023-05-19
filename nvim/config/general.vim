@@ -49,12 +49,12 @@ nnoremap <leader>w <C-w>
 nnoremap <silent> <leader>hc :noh<CR>
 
 "Paragraph mappings
-nnoremap ü {
-nnoremap + }
+nnoremap + {
+nnoremap ü }
 
 "Section mappings
-nnoremap Ü [
-nnoremap * ]
+nnoremap * [
+nnoremap Ü ]
 
 "Add back goto start of next line
 nnoremap ö +

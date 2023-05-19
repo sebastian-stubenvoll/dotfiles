@@ -23,6 +23,9 @@ Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 
+"Harpoon
+Plug 'ThePrimeagen/harpoon'
+
 "Cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'

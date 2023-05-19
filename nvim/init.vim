@@ -8,6 +8,7 @@ source $HOME/.config/nvim/config/lsp.lua
 source $HOME/.config/nvim/config/pywal.lua
 source $HOME/.config/nvim/config/treesitter.lua
 source $HOME/.config/nvim/config/telescope.lua
+source $HOME/.config/nvim/config/harpoon.vim
 source $HOME/.config/nvim/config/ultisnips.vim
 source $HOME/.config/nvim/config/cmp.lua
 source $HOME/.config/nvim/config/lualine.lua
