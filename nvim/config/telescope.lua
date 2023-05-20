@@ -35,6 +35,7 @@ require('telescope').setup {
 }
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('bibtex')
+require("telescope").load_extension("git_worktree")
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
@@ -50,3 +51,12 @@ vim.keymap.set('n', '<leader>tgc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>tgs', builtin.git_stash, {})
 vim.keymap.set('n', '<leader>ts', builtin.symbols, {})
 vim.keymap.set('i', '<C-s>', builtin.symbols, {})
+vim.keymap.set('n', '<leader>tgw', require('telescope').extensions.git_worktree.git_worktrees, {})
+vim.keymap.set('n', '<leader>tgn', require('telescope').extensions.git_worktree.create_git_worktree, {})
+
+
+
+
+
+
+

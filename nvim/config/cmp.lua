@@ -1,7 +1,7 @@
 -- Set up nvim-cmp.
 local cmp = require'cmp'
 local cmp_ultisnips_mappings = require'cmp_nvim_ultisnips.mappings'
---local lspkind = require'lspkind'
+local lspkind = require'lspkind'
 
 cmp.setup({
     preselect =cmp.PreselectMode.None,
@@ -21,9 +21,9 @@ cmp.setup({
             scrollbar = false,
         },
     },
-    --formatting = {
-        --format = lspkind.cmp_format(),
-    --},
+    formatting = {
+        format = lspkind.cmp_format(),
+    },
     mapping = {
         -- scroll docs
         ['<C-f>'] = cmp.mapping.scroll_docs(-4),

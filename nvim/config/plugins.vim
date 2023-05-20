@@ -50,11 +50,13 @@ Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'kylechui/nvim-surround'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'windwp/nvim-autopairs'
 
 "Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'ThePrimeagen/git-worktree.nvim'
 
 "Language specific
 Plug 'simrat39/rust-tools.nvim'
