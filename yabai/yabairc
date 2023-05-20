@@ -1,3 +1,4 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 #load scripting-addon (requires sudoers file with up-to-date hash)
 sudo yabai --load-sa
 
