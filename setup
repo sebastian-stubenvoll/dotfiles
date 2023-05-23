@@ -72,6 +72,9 @@ brew install pstree
 brew install --cask ubersicht
 brew install ctags
 brew install ripgrep
+brew install exa
+brew install bat
+brew install nushell
 
 #Nerd fonts
 brew install --cask font-meslo-nerd-font
@@ -94,6 +97,17 @@ brew upgrade
 brew autoremove
 
 echo "Brew installations complete..."
+
+##########
+#  rust  #
+##########
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo "Rust toolchain installed..."
+
+cargo install cargo-update
+cargo install starship
+
 
 ############
 #  python  #

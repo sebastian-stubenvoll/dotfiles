@@ -104,11 +104,17 @@ The installation process is split into the following segments:
 | übersicht                | brew                |
 | ctags                    | brew                |
 | ripgrep                  | brew                |
+| bat                      | brew                |
+| exa                      | brew                |
+| nushell                  | brew                |
 | pynvim                   | python / pip        |
 | neovim remote            | python / pip        |
 | rope                     | python / pip        |
 | spotify-cli              | python / pip        |
 | oh-my-zsh                | curl + script       |
+| rust                     | curl + script       |
+| cargo-update             | cargo               |
+| starship                 | cargo               |
 | fast-syntax-highlighting | git                 |
 | p10k                     | git                 |
 | betterdiscord            | git                 |
