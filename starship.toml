@@ -30,7 +30,7 @@ format = '[${ram_pct}]($style)'
 disabled = false
 
 [custom.cpu]
-command = "iostat | tail -n 1 | awk '{print $NF}'"
+command = "iostat | awk '{print $7}' | tail -n 1"
 when=true
 style='white'
 
