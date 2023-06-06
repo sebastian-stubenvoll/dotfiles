@@ -42,18 +42,24 @@ require('lualine').setup {
         lualine_z = {}
     },
     tabline = {
-        lualine_a = {},
-        lualine_b = {
-            {
-                'buffers',
+        --lualine_a = {},
+        lualine_c = {
+            '%=',
+            { 'buffers',
                 symbols = {
                     modified = ' +', -- Text to show when the buffer is modified
                     alternate_file = '', -- Text to show to identify the alternate file
                     directory = '', -- Text to show when the buffer is a directory
-                }
+                },
+                buffers_color = {
+                    -- Same values as the general color option can be used here.
+                    active = 'lualine_a_normal',     -- Color for active buffer.
+                    inactive = 'lualine_a_inactive', -- Color for inactive buffer.
+                },
+                mode = 4,
             }
         },
-        lualine_c = {},
+        --lualine_c = {},
         lualine_x = {},
         lualine_y = {},
         lualine_z = { 'tabs' }
