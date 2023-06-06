@@ -50,10 +50,16 @@ brew tap zegervdv/zathura
 #run update before installing packages
 brew update
 
+#set up rtx and languages
+brew install rtx
+echo 'eval "$(~/bin/rtx activate zsh)"' >> ~/.zshrc
+source ~/.zshrc
+
+rtx use -g python@latest
+rtx use -g node@latest
+
 #Applications
 brew install zsh
-brew install python
-brew install node
 brew install tmux
 brew install neovim
 brew install skhd
@@ -114,12 +120,10 @@ cargo install starship
 ############
 
 echo "Installing python..."
-#speficially use python2/python3 -m pip just to be safe
-python3 -m pip install pynvim 
-python -m pip install pynvim 2>/dev/null
-python3 -m pip install neovim-remote
-python3 -m pip install rope
-python3 -m pip install spotify-cli
+python -m pip install pynvim 
+python -m pip install neovim-remote
+python -m pip install rope
+python -m pip install spotify-cli
 
 ##########
 #  node  #
@@ -224,6 +228,10 @@ git clone https://github.com/khanhas/spicetify-cli.git ~./config/tmp
 mv ~/.config/tmp/spicetify-cli/CustomApps/* ~/.config/spicetify/CustomApps
 rm -rf ~/.config/tmp
 spicetify backup apply enable-devtool
+
+#set up starship
+echo 'eval "$(starship init zsh)"' >> ~/.config/zsh/.zshrc
+
 
 
 echo "Manual adjustments might be required:"

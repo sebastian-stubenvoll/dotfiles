@@ -27,6 +27,7 @@ export PATH="/Users/sebastian/.local/bin:$PATH"
 alias neofetch='neofetch --iterm2 ~/.config/bunt/wallpaper'
 alias ls='exa'
 alias l='exa -lah'
+alias UPDATE='brew update && brew upgrade && brew cleanup && cargo install-update -a && nvim -c "PlugUpgrade | PlugUpdate | qall" && pip install -U pip && pip install -U pynvim neovim-remote rope spotify-cli'
 
 #dbus
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"

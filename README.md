@@ -8,6 +8,7 @@ necessary software.
 ## Features ##
 
 This section is a work in progress.
+There's a good chance this is outdated 🙃
 
 **bu**ild **n**ew **t**hemes using the *bunt* script. This calls pywal and
 updates all themes on applications that use pywal colours.
@@ -68,13 +69,14 @@ The installation process is split into the following segments:
 
 0. Backup
 1. Install brew
-2. Install brew packages
-3. Install python
-4. Install python packages
-5. Install miscellaneous other bits
-6. Copy over the files from this repository
-7. Create necessary symlinks
-8. Take post-installation actions
+2. Install rtx
+3. Install python and node using rtx
+4. Install brew packages
+5. Install python packages
+6. Install miscellaneous other bits
+7. Copy over the files from this repository
+8. Create necessary symlinks
+9. Take post-installation actions
 
 ## What gets installed? ##
 
@@ -82,7 +84,7 @@ The installation process is split into the following segments:
 |:-------------------------|:--------------------|
 | brew                     | curl + script       |
 | zsh                      | brew                |
-| python                   | brew                |
+| rtx                      | brew                |
 | node                     | brew                |
 | tmux                     | brew                |
 | neovim                   | brew                |
@@ -116,7 +118,6 @@ The installation process is split into the following segments:
 | cargo-update             | cargo               |
 | starship                 | cargo               |
 | fast-syntax-highlighting | git                 |
-| p10k                     | git                 |
 | betterdiscord            | git                 |
 | pywal-discord            | git                 |
 | simple-bar               | git                 |
