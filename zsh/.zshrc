@@ -50,3 +50,9 @@ eval "$(starship init zsh)"
 
 eval $(thefuck --alias)
 eval "$(/usr/local/bin/rtx activate zsh)"
+
+#Inkscape
+#needed because it needs to be run with sudo privileges, otherwise it won't start from the terminal,
+#though noone else seems to have this problem :)
+#there's an entry for it in /private/sudoers.d/inkscape
+alias inkscape="sudo /usr/local/bin/inkscape"

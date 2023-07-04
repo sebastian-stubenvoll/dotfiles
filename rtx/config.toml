@@ -2,3 +2,4 @@
 python = "latest"
 node = "latest"
 rust = "latest"
+lua = "latest"

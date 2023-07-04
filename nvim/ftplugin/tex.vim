@@ -16,4 +16,6 @@ nmap <silent> <localleader>C <plug>(vimtex-clean-full)
 nmap <silent> <localleader>q <plug>(vimtex-stop)
 nmap <silent> <localleader>Q <plug>(vimtex-stop-all)
 
-source $HOME/.config/nvim/config/vimtex.vim
+"inkscape figure manager
+inoremap <silent> <C-f> <Esc>: exec '.!sudo inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
+nnoremap <silent> <C-f> : exec '!sudo inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>

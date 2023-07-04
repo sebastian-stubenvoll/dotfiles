@@ -66,4 +66,7 @@ Plug 'artur-shaik/vim-grammarous', {'branch': 'byte-to-char'}
 Plug 'deanashton/vim-deckset'
 Plug 'plasticboy/vim-markdown'
 
+"Development
+Plug 'folke/neodev.nvim'
+
 call plug#end()

@@ -37,7 +37,7 @@ installed via brew.
 
 ![example_png](https://github.com/sebastian-stubenvoll/dotfiles/blob/main/tex_example.png?raw=true)
 A fair amount of tex features/mappings also translate to markdown files,
-specifically intended for the creation of presentations in Deckset. This even
+specifically intended for the creation of presentations in Deckset or *slides*. This even
 allows you to use your math related tex snippets in MathJax environments!
 
 Hotkeys with skhd: This includes a fair amount of yabai mappings but also other
@@ -85,7 +85,6 @@ The installation process is split into the following segments:
 | brew                     | curl + script       |
 | zsh                      | brew                |
 | rtx                      | brew                |
-| node                     | brew                |
 | tmux                     | brew                |
 | neovim                   | brew                |
 | skhd                     | brew                |
@@ -109,10 +108,15 @@ The installation process is split into the following segments:
 | bat                      | brew                |
 | exa                      | brew                |
 | nushell                  | brew                |
+| python (latest)          | rtx                 |
+| node (latest)            | rtx                 |
+| rust (latest)            | rtx                 |
 | pynvim                   | python / pip        |
 | neovim remote            | python / pip        |
 | rope                     | python / pip        |
 | spotify-cli              | python / pip        |
+| inkscape-figures         | python / pip        |
+| unidecode                | python / pip        |
 | oh-my-zsh                | curl + script       |
 | rust                     | curl + script       |
 | cargo-update             | cargo               |

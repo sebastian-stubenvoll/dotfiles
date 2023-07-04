@@ -1,32 +1,5 @@
-priority 0
-snippet notespre "basic peramble for quickly taking notes" bA
-\documentclass[11pt]{report}
-\usepackage[T1]{fontenc}	
-\usepackage[bottom,hang]{footmisc}
-\usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{dsfont}
-\usepackage{url}
-\usepackage{graphicx}
-\usepackage{physics}
-\usepackage[bf,hang,nooneline,justification=centering]{caption}
-\usepackage{booktabs}
-\usepackage[a4paper, left=1.5cm, top=1.5cm, bottom=1.5cm, right=2cm]{geometry}
-\usepackage{titlesec}
-
-\titleformat{\chapter}[display]
-  {\normalfont\bfseries}{}{0pt}{\Huge}
-
-\begin{document}
-$0
-
-\end{document}
-endsnippet
-
-snippet thesispre "preamble for university papers" bA
-% !TeX program = xelatex
+snippet preamble "general purpose preamble" bA
+%! TeX program = lualatex
 
 \documentclass[12pt]{article}
 
@@ -53,6 +26,16 @@ $1\bibliographystyle{apacite}
 \usepackage{pdfpages}
 \usepackage{siunitx}
 \onehalfspacing
+\usepackage{import}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
 
 %Uncomment for title page
 ${2:%}\setcounter{secnumdepth}{0}
