@@ -81,6 +81,8 @@ brew install ripgrep
 brew install exa
 brew install bat
 brew install nushell
+brew install --cask karabiner-elements
+brew install --cask hammerspoon
 
 #Nerd fonts
 brew install --cask font-meslo-nerd-font
@@ -126,6 +128,7 @@ python -m pip install rope
 python -m pip install spotify-cli
 python -m pip install inkscape-figures
 python -m pip install unidecode
+python -m pip install clipboard
 
 ##########
 #  node  #
@@ -239,3 +242,5 @@ echo 'eval "$(starship init zsh)"' >> ~/.config/zsh/.zshrc
 echo "Manual adjustments might be required:"
 echo "Install the pywal firefox extension"
 echo "Set the iterm font"
+echo "Setup karabiner-elements and hammerspoon"
+echo "Load inkscape config"

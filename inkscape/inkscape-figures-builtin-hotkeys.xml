@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<keys
+   name="User Shortcuts">
+  <bind
+     gaction="app.delete"
+     keys="Delete,KP_Delete,BackSpace,x" />
+  <bind
+     gaction="app.delete-selection"
+     keys="q" />
+  <bind
+     gaction="app.object-rotate-90-ccw"
+     keys="&lt;Primary&gt;bracketleft,&lt;Shift&gt;r" />
+  <bind
+     gaction="app.undo"
+     keys="y" />
+  <bind
+     gaction="doc.redo"
+     keys="&lt;Shift&gt;y" />
+  <bind
+     gaction="win.snap-global-toggle"
+     keys="percent,c" />
+  <bind
+     gaction="win.tool-switch('Pen')"
+     keys="b,&lt;Shift&gt;F6,f" />
+  <bind
+     gaction="win.tool-switch('Pencil')"
+     keys="p,F6,w" />
+</keys>

@@ -52,7 +52,7 @@ fn + shift - 6 : yabai -m window --space 6
 fn + shift - 7 : yabai -m window --space 7
 fn + shift - 8 : yabai -m window --space 8
 fn + shift - 9 : yabai -m window --space 9
-fn +shift - tab : yabai -m window --space recent
+fn + shift - tab : yabai -m window --space recent
 
 #space management
 ctrl + shift + alt - 1 : yabai -m window --display 1
@@ -83,9 +83,5 @@ fn + shift - 0x2C : spotify save -y . && osascript -e 'display notification "the
 fn + shift - 0x2B : spotify vol down 5
 fn + shift - 0x2F : spotify vol up 5
 
-#mktex
-fn + cmd - n: "${HOME}"/.config/scripts/mktex_autoname.py
-
-
 #quick reload
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+ctrl + alt + cmd - r : yabai --restart-service

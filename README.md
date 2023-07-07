@@ -108,6 +108,8 @@ The installation process is split into the following segments:
 | bat                      | brew                |
 | exa                      | brew                |
 | nushell                  | brew                |
+| karabiner                | brew                |
+| hammerspoon              | brew                |
 | python (latest)          | rtx                 |
 | node (latest)            | rtx                 |
 | rust (latest)            | rtx                 |
@@ -117,6 +119,7 @@ The installation process is split into the following segments:
 | spotify-cli              | python / pip        |
 | inkscape-figures         | python / pip        |
 | unidecode                | python / pip        |
+| clipboard                | python / pip        |
 | oh-my-zsh                | curl + script       |
 | rust                     | curl + script       |
 | cargo-update             | cargo               |
