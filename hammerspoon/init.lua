@@ -27,7 +27,7 @@ end
 function create_svg_and_paste(keys)
 
     pt = 1.327 -- pixels
-    w = 2 * pt
+    w = 1 * pt
     thick_width = 4 * pt
     very_thick_width = 8 * pt
 
