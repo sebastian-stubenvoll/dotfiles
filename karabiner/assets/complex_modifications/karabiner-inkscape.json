@@ -1480,7 +1480,7 @@
                   "key_code": "t",
                   "modifiers": {
                      "mandatory": [
-                        "left_shift"
+                        "left_control"
                      ]
                   }
                },
@@ -1504,7 +1504,7 @@
                   "key_code": "s",
                   "modifiers": {
                      "mandatory": [
-                        "left_shift"
+                        "left_control"
                      ]
                   }
                },
@@ -1528,7 +1528,7 @@
                   "key_code": "a",
                   "modifiers": {
                      "mandatory": [
-                        "left_shift"
+                        "left_control"
                      ]
                   }
                },
@@ -1552,7 +1552,7 @@
                   "key_code": "w",
                   "modifiers": {
                      "mandatory": [
-                        "left_shift"
+                        "left_control"
                      ]
                   }
                },
@@ -1576,7 +1576,7 @@
                   "key_code": "q",
                   "modifiers": {
                      "mandatory": [
-                        "left_shift"
+                        "left_control"
                      ]
                   }
                },

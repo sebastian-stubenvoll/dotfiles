@@ -39,7 +39,7 @@ local arr = [
           from: {
             "modifiers": {
               "mandatory": [
-                "left_shift"
+                "left_control"
               ]
             },
             "key_code": "t",
@@ -52,7 +52,7 @@ local arr = [
           from: {
             "modifiers": {
               "mandatory": [
-                "left_shift"
+                "left_control"
               ]
             },
             "key_code": "s",
@@ -65,7 +65,7 @@ local arr = [
           from: {
             "modifiers": {
               "mandatory": [
-                "left_shift"
+                "left_control"
               ]
             },
             "key_code": "a",
@@ -78,7 +78,7 @@ local arr = [
           from: {
             "modifiers": {
               "mandatory": [
-                "left_shift"
+                "left_control"
               ]
             },
             "key_code": "w",
@@ -91,7 +91,7 @@ local arr = [
           from: {
             "modifiers": {
               "mandatory": [
-                "left_shift"
+                "left_control"
               ]
             },
             "key_code": "q",
