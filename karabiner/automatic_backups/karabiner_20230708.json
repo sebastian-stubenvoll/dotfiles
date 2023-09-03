@@ -1497,7 +1497,7 @@
                                     "key_code": "t",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "left_shift"
                                         ]
                                     }
                                 },
@@ -1521,7 +1521,7 @@
                                     "key_code": "s",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "left_shift"
                                         ]
                                     }
                                 },
@@ -1545,7 +1545,7 @@
                                     "key_code": "a",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "left_shift"
                                         ]
                                     }
                                 },
@@ -1569,7 +1569,7 @@
                                     "key_code": "w",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "left_shift"
                                         ]
                                     }
                                 },
@@ -1593,37 +1593,13 @@
                                     "key_code": "q",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "left_shift"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "shell_command": "SVGNAME=$(ls ~/.config/inkscape/objects|sed -e 's/\\.[^.]*$//'|/usr/local/bin/choose) && /usr/local/bin/hs -c \"paste_object(\\\"$SVGNAME\\\");\""
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "org.inkscape.Inkscape"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "qlmanage -p $HOME/.config/karabiner/assets/inkscape_shortcut.png"
                                     }
                                 ],
                                 "type": "basic"

@@ -98,6 +98,19 @@ local arr = [
           },
           to: [{ shell_command: "SVGNAME=$(ls ~/.config/inkscape/objects|sed -e 's/\\.[^.]*$//'|/usr/local/bin/choose) && /usr/local/bin/hs -c \"paste_object(\\\"$SVGNAME\\\");\""}],
           conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['org.inkscape.Inkscape'] }],
+        },
+        {
+          type: 'basic',
+          from: {
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            },
+            "key_code": "h",
+          },
+          to: [{ shell_command: "qlmanage -p $HOME/.config/karabiner/assets/inkscape_shortcut.png"}],
+          conditions: [{ type: 'frontmost_application_if', bundle_identifiers: ['org.inkscape.Inkscape'] }],
         }
       ],
     },

@@ -1586,6 +1586,30 @@
                   }
                ],
                "type": "basic"
+            },
+            {
+               "conditions": [
+                  {
+                     "bundle_identifiers": [
+                        "org.inkscape.Inkscape"
+                     ],
+                     "type": "frontmost_application_if"
+                  }
+               ],
+               "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                     "mandatory": [
+                        "left_control"
+                     ]
+                  }
+               },
+               "to": [
+                  {
+                     "shell_command": "qlmanage -p $HOME/.config/karabiner/assets/inkscape_shortcut.png"
+                  }
+               ],
+               "type": "basic"
             }
          ]
       }
