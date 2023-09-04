@@ -10,7 +10,8 @@ def open_editor(filename):
         '-e', 'activate application "iTerm"',
         '-e', 'end if',
         '-e', 'tell application "iTerm"',
-        '-e', f'set newWindow to (create window with default profile command "nvim -u ~/.config/inkscape/minimal.vim {filename}")',
+        '-e', 'set newWindow to (create window with default profile)',
+        '-e', f'tell current session of newWindow to write text "nvim -u ~/.config/inkscape/minimal.vim {filename} && exit"',
         '-e', 'set windowID to id of newWindow',
         '-e', 'end tell',
         '-e', 'return windowID'
