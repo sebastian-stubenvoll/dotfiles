@@ -13,7 +13,8 @@ function! QuitAndPaste()
 endfunction
 
 " Start insert mode between $$'s
-autocmd BufEnter * startinsert | call cursor(1, 2)
+autocmd BufEnter * if !exists('b:has_been_entered') | 
+    \ let b:has_been_entered = 1 | startinsert | call cursor(1,2) | endif
 
 "Text conceal
 autocmd vimenter * ++nested set conceallevel=2
