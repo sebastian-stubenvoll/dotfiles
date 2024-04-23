@@ -51,6 +51,7 @@ Plug 'godlygeek/tabular'
 Plug 'kylechui/nvim-surround'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'windwp/nvim-autopairs'
+Plug 'stevearc/aerial.nvim'
 
 "Git
 Plug 'tpope/vim-fugitive'

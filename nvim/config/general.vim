@@ -12,7 +12,7 @@ set background=dark
 set completeopt=menu,menuone,noselect
 set mouse=
 set fillchars=stl:  "this contains an em space!
-set signcolumn=yes:1
+set signcolumn=yes:2
 
 "Provider settings
 let g:python_host_prog="/usr/bin/python"

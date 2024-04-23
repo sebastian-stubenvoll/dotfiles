@@ -56,3 +56,4 @@ eval "$(/usr/local/bin/rtx activate zsh)"
 #though noone else seems to have this problem :)
 #there's an entry for it in /private/sudoers.d/inkscape
 alias inkscape="sudo /usr/local/bin/inkscape"
+. "/Users/sebastian/.local/share/rtx/installs/rust/1.76.0/env"
