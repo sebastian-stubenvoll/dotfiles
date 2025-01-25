@@ -24,9 +24,9 @@ fi
 export PATH="/Users/sebastian/.local/bin:$PATH"
 
 #aliases
-alias neofetch='neofetch --iterm2 ~/.config/bunt/wallpaper'
-alias ls='exa'
-alias l='exa -lah'
+#alias neofetch='neofetch --iterm2 ~/.config/bunt/wallpaper'
+alias ls='eza'
+alias l='eza -lah'
 alias UPDATE='brew update && brew upgrade && brew cleanup && cargo install-update -a && nvim -c "PlugUpgrade | PlugUpdate | qall" && pip install -U pip && pip install -U pynvim neovim-remote rope spotify-cli'
 
 #dbus
@@ -35,6 +35,8 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 #Android SDK
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
+export NDK_HOME="/usr/local/share/android-ndk"
 
 #PICO SDK
 export PICO_SDK_PATH="${HOME}/Documents/projects/pico-sdk"
@@ -49,11 +51,10 @@ export PATH=$PATH:$PERL5_PREFIX/bin
 eval "$(starship init zsh)"
 
 eval $(thefuck --alias)
-eval "$(/usr/local/bin/rtx activate zsh)"
+eval "$(/usr/local/bin/mise activate zsh)"
 
 #Inkscape
 #needed because it needs to be run with sudo privileges, otherwise it won't start from the terminal,
 #though noone else seems to have this problem :)
 #there's an entry for it in /private/sudoers.d/inkscape
 alias inkscape="sudo /usr/local/bin/inkscape"
-. "/Users/sebastian/.local/share/rtx/installs/rust/1.76.0/env"
