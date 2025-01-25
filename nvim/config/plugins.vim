@@ -41,6 +41,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 "Appearance
 Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
+Plug 'navarasu/onedark.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 

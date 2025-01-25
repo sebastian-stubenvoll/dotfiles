@@ -1,6 +1,9 @@
+local walcols = require('lualine.themes.pywal')
+--walcols.inactive.c.bg = walcols.normal.b.bg
+
 require('lualine').setup {
     options = {
-        theme = 'pywal',
+        theme = walcols,
         icons_enabled = true,
         --component_separators = { left = '', right = '' },
         --section_separators = { left = '', right = '' },
@@ -33,13 +36,13 @@ require('lualine').setup {
         lualine_z = { 'location' }
     },
     inactive_sections = {
-        lualine_a = {},
+        lualine_c = {},
         lualine_b = {},
-        lualine_c = { 'filename', 'diff'
+        lualine_a = { 'filename', 'diff'
         },
-        lualine_x = { 'location' },
+        lualine_z = { 'location' },
         lualine_y = {},
-        lualine_z = {}
+        lualine_x = {}
     },
     tabline = {
         --lualine_a = {},
@@ -66,4 +69,3 @@ require('lualine').setup {
     },
     extensions = { 'fugitive', 'quickfix' }
 }
-

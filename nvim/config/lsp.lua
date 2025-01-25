@@ -87,3 +87,8 @@ require("mason-lspconfig").setup_handlers {
     end
 }
 
+vim.filetype.add({
+    pattern = {
+      ['.*%.wgsl'] = 'wgsl',
+    },
+})

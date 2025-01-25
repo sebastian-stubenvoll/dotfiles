@@ -20,3 +20,4 @@ source $HOME/.config/nvim/config/autopairs.lua
 source $HOME/.config/nvim/config/git.lua
 source $HOME/.config/nvim/config/vimtex.vim
 source $HOME/.config/nvim/config/arial.lua
+source $HOME/.config/nvim/config/one-dark.lua

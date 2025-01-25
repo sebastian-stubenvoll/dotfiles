@@ -11,7 +11,7 @@ set pumheight=5
 set background=dark
 set completeopt=menu,menuone,noselect
 set mouse=
-set fillchars=stl:  "this contains an em space!
+set fillchars=stlnc:─, stl:  "this contains an em space!
 set signcolumn=yes:2
 
 "Provider settings
