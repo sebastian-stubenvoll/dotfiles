@@ -1,4 +1,3 @@
-
 "General settings
 source $HOME/.config/nvim/config/general.vim
 source $HOME/.config/nvim/config/plugins.vim
@@ -21,3 +20,4 @@ source $HOME/.config/nvim/config/git.lua
 source $HOME/.config/nvim/config/vimtex.vim
 source $HOME/.config/nvim/config/arial.lua
 source $HOME/.config/nvim/config/one-dark.lua
+source $HOME/.config/nvim/config/obsidian.lua

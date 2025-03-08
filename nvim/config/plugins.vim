@@ -6,27 +6,30 @@ Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'j-hui/fidget.nvim'
 
-"Ultisnips
+""Ultisnips
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-"Tresitter
+"Obsidian
+Plug 'epwalsh/obsidian.nvim'
+
+""Tresitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 
-"Telescope
+""Telescope
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 
-"Harpoon
+""Harpoon
 Plug 'ThePrimeagen/harpoon'
 
-"Cmp
+""Cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -36,31 +39,30 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'onsails/lspkind.nvim'
 Plug 'kdheepak/cmp-latex-symbols'
 
-"Tmux navigator
+""Tmux navigator
 Plug 'christoomey/vim-tmux-navigator'
 
-"Appearance
+""Appearance
 Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 Plug 'navarasu/onedark.nvim'
-Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim', { 'commit' : '2248ef254d0a1488a72041cfb45ca9caada6d994'}
 Plug 'kyazdani42/nvim-web-devicons'
 
-"QoL features
+""QoL features
 Plug 'preservim/nerdcommenter'
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'kylechui/nvim-surround'
-Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'stevearc/aerial.nvim'
 
-"Git
+""Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'ThePrimeagen/git-worktree.nvim'
 
-"Language specific
+""Language specific
 Plug 'simrat39/rust-tools.nvim'
 Plug 'lervag/vimtex'
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
@@ -68,7 +70,7 @@ Plug 'artur-shaik/vim-grammarous', {'branch': 'byte-to-char'}
 Plug 'deanashton/vim-deckset'
 Plug 'plasticboy/vim-markdown'
 
-"Development
+""Development
 Plug 'folke/neodev.nvim'
 
 call plug#end()

@@ -1,5 +1,5 @@
 local walcols = require('lualine.themes.pywal')
---walcols.inactive.c.bg = walcols.normal.b.bg
+walcols.inactive.c.fg = walcols.normal.b.bg
 
 require('lualine').setup {
     options = {
