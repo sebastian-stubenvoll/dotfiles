@@ -133,4 +133,16 @@ return {
         },
         { d(1, generate_fraction) }
     ),
+
+   s(
+        { 
+            trig=tex.exp_trigger("\\/\\/"), 
+            name='fraction', 
+            desc='auto fraction 1', 
+            trigEngine="ecma",
+            snippetType = "autosnippet",
+            condition = tex.in_math
+        },
+        fmt("\\frac{{{}}}{{{}}}{}",{ f(function (_, snip) return snip.captures[1] end), i(1), i(0) })
+    ),
 }

@@ -161,5 +161,28 @@ return {
   s({ trig = "alnn", name = "Align*" },
     fmt("\\begin{{align*}}\n  {}\n\\end{{align*}}", { i(0) })
   ),
+   s(
+        {
+            trig="(\\w+)ITA",
+            name='Italics postfix', 
+            desc='Italics postfix', 
+            trigEngine="ecma",
+            snippetType = "autosnippet",
+            condition = tex.in_text
+        },
+        fmt("\\textit{{{}}} {}",{ f(function (_, snip) return snip.captures[1] end), i(0) })
+    ),
+
+   s(
+        {
+            trig="(\\w+)BF",
+            name='Bold postfix', 
+            desc='Bold postfix', 
+            trigEngine="ecma",
+            snippetType = "autosnippet",
+            condition = tex.in_text
+        },
+        fmt("\\textbf{{{}}} {}",{ f(function (_, snip) return snip.captures[1] end), i(0) })
+    ),
 }
 
