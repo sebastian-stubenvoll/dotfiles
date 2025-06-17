@@ -10,7 +10,7 @@ source $HOME/.config/nvim/config/treesitter.lua
 source $HOME/.config/nvim/config/git-worktree.lua
 source $HOME/.config/nvim/config/telescope.lua
 source $HOME/.config/nvim/config/harpoon.vim
-source $HOME/.config/nvim/config/ultisnips.vim
+source $HOME/.config/nvim/config/luasnip.lua
 source $HOME/.config/nvim/config/cmp.lua
 source $HOME/.config/nvim/config/lualine.lua
 source $HOME/.config/nvim/config/spelling.vim

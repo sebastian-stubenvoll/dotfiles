@@ -1,23 +1,15 @@
 global !p
+
 def math():
-    return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+	  return vim.eval('vimtex#syntax#in_mathzone()') == 1
+
 endglobal
 
 
 ##############
 # MATH STUFF #
 ##############
-priority 0
-context "math()"
-snippet SQ "^2" iA
-^2$0
-endsnippet
 
-priority 0
-context "math()"
-snippet CB "^3" iA
-^3$0
-endsnippet
 
 priority 0
 context "math()"

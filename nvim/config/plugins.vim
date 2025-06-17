@@ -6,9 +6,9 @@ Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'j-hui/fidget.nvim'
 
-""Ultisnips
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Snippets
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} 
+Plug 'rafamadriz/friendly-snippets'
 
 "Obsidian
 Plug 'epwalsh/obsidian.nvim'
@@ -22,7 +22,7 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'fhill2/telescope-ultisnips.nvim'
+Plug 'benfowler/telescope-luasnip.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 
@@ -35,7 +35,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'onsails/lspkind.nvim'
 Plug 'kdheepak/cmp-latex-symbols'
 
