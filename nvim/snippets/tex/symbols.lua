@@ -1,6 +1,8 @@
+local ts_utils = require("utils.ts_utils")
+
 local tex = {}
 tex.in_mathzone = function()
-    return vim.fn['vimtex#syntax#in_mathzone']() == 1
+    return ts_utils.in_mathzone()
 end
 tex.in_text = function()
     return not tex.in_mathzone()

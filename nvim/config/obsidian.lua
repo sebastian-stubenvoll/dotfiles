@@ -18,7 +18,7 @@ require("obsidian").setup({
       end,
       opts = { noremap = false, expr = true, buffer = true },
     },
-    ["<leader>ch"] = {
+    ["<leader>x"] = {
       action = function()
         return require("obsidian").util.toggle_checkbox()
       end,
@@ -74,7 +74,7 @@ require("obsidian").setup({
           -- Add tag(s) to current note.
           tag_note = "<C-x>",
           -- Insert a tag at the current location.
-          insert_tag = "<C-l>",
+          insert_tag = "<C-n>",
       },
   },
   open_notes_in = "current",
@@ -120,3 +120,5 @@ require("obsidian").setup({
       img_folder = "assets/imgs",  -- This is the default
   },
 });
+
+

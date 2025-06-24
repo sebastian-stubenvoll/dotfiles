@@ -12,4 +12,5 @@ vim.keymap.set({"i", "s"}, "<C-e>", function()
 end, {silent = true})
 
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/snippets"})
+require("luasnip.loaders.from_vscode").lazy_load({exclude = { "tex" }})
 

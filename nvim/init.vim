@@ -21,3 +21,4 @@ source $HOME/.config/nvim/config/vimtex.vim
 source $HOME/.config/nvim/config/arial.lua
 source $HOME/.config/nvim/config/one-dark.lua
 source $HOME/.config/nvim/config/obsidian.lua
+source $HOME/.config/nvim/config/scratch.vim

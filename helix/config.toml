@@ -1,0 +1,31 @@
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "file-name", "file-modification-indicator", "version-control"]
+center = []
+right = ["spinner", "diagnostics", "read-only-indicator", "file-type", "position", "position-percentage"]
+separator = "│"
+mode.normal = "normal"
+mode.insert = "insert"
+mode.select = "select"
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.lsp]
+display-progress-messages = true

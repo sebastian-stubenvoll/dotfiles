@@ -1,6 +1,8 @@
+local ts_utils = require("utils.ts_utils")
+
 local tex = {}
 tex.in_mathzone = function()
-    return vim.fn['vimtex#syntax#in_mathzone']() == 1
+    return ts_utils.in_mathzone()
 end
 tex.in_text = function()
     return not tex.in_mathzone()
@@ -69,6 +71,7 @@ return {
             name = "Fraction",
             desc = "Fraction snippet [math only]",
             condition = tex.in_mathzone,
+            show_condition = tex.in_mathzone,
 
         },
         fmt("\\frac{{{}}}{{{}}} {}", { i(1), i(2), i(0)})
@@ -80,6 +83,7 @@ return {
             name = "Root",
             desc = "Root symbol  [math only]",
             condition = tex.in_mathzone,
+            show_condition = tex.in_mathzone,
 
         },
         fmt("\\sqrt[{}]{{{}}} {}", { i(1), i(2), i(0)})
@@ -91,6 +95,7 @@ return {
             name = "Integral",
             desc = "Integral symbol  [math only]",
             condition = tex.in_mathzone,
+            show_condition = tex.in_mathzone,
 
         },
         fmt("\\int_{{{}}}^{{{}}} {}", { i(1), i(2), i(0)})
@@ -102,6 +107,7 @@ return {
             name = "Sum",
             desc = "Summation symbol  [math only]",
             condition = tex.in_mathzone,
+            show_condition = tex.in_mathzone,
 
         },
         fmt("\\sum_{{{}}}^{{{}}} {}", { i(1), i(2), i(0)})
@@ -113,6 +119,7 @@ return {
             name = "Product",
             desc = "Product symbol  [math only]",
             condition = tex.in_mathzone,
+            show_condition = tex.in_mathzone,
 
         },
         fmt("\\prod{{{}}}^{{{}}} {}", { i(1), i(2), i(0)})
@@ -124,6 +131,7 @@ return {
             name = "Limit",
             desc = "Limit symbol  [math only]",
             condition = tex.in_mathzone,
+            show_condition = tex.in_mathzone,
 
         },
         fmt("\\lim_{{{}}} {}", { i(1), i(0)})
@@ -135,6 +143,7 @@ return {
             name = "Parenthesis matrix",
             desc = "Parenthesis matrix [math only]",
             condition = tex.in_mathzone,
+            show_condition = tex.in_mathzone,
 
         },
         fmt("\\begin{{pmatrix}}\n{}\n\\end{{pmatrix}} {}", { i(1), i(0)})
@@ -146,6 +155,7 @@ return {
             name = "Bracket matrix",
             desc = "Bracket matrix [math only]",
             condition = tex.in_mathzone,
+            show_condition = tex.in_mathzone,
 
         },
         fmt("\\begin{{bmatrix}}\n{}\n\\end{{bmatrix}} {}", { i(1), i(0)})
@@ -157,6 +167,7 @@ return {
             name = "Curly-bracket matrix",
             desc = "Curly-bracket matrix [math only]",
             condition = tex.in_mathzone,
+            show_condition = tex.in_mathzone,
 
         },
         fmt("\\begin{{cmatrix}}\n{}\n\\end{{cmatrix}} {}", { i(1), i(0)})

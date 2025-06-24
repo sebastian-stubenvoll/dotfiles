@@ -24,3 +24,4 @@ let g:vimtex_quickfix_ignore_filters = [
     \'LaTeX hooks Warning'
 \]
 
+

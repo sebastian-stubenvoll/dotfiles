@@ -1,5 +1,9 @@
-require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason").setup({
+    ensure_installed = {
+        "tinymist",
+    },
+})
+
 require"fidget".setup{
     progress = {
       display = {
@@ -7,22 +11,6 @@ require"fidget".setup{
         done_icon = "✔",               -- character shown when all tasks are complete
       },
     },
-}
-
--- Specfic LSP options
-
-local rust_tools_opts = {
-  tools = {
-    autoSetHints = true,
-    inlay_hints = {
-      only_current_line = false,
-      show_parameter_hints = true,
-	  show_variable_name = false,
-	  parameter_hints_prefix = " ",
-	  other_hints_prefix = " ",
-	  highlight = "String",
-    },
-  },
 }
 
 -- Keymap
@@ -70,22 +58,6 @@ vim.diagnostic.config{
   float={border=_border}
 }
 
-
---Setup handlers
-
-require("mason-lspconfig").setup_handlers {
-    -- The first entry (without a key) will be the default handler
-    -- and will be called for each installed server that doesn't have
-    -- a dedicated handler.
-    function (server_name) -- default handler (optional)
-        require("lspconfig")[server_name].setup {}
-    end,
-    -- Next, you can provide a dedicated handler for specific servers.
-    -- For example, a handler override for the `rust_analyzer`:
-    ["rust_analyzer"] = function ()
-        require("rust-tools").setup(rust_tools_opts)
-    end
-}
 
 vim.filetype.add({
     pattern = {

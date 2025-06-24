@@ -59,23 +59,18 @@ cmp.setup({
 })
 
 cmp.setup.cmdline({ '/', '?' }, {
-    mapping = {
-        ['<C-k>'] = cmp.mapping.select_prev_item(),
-        ['<C-j>'] = cmp.mapping.select_next_item(),
-    },
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'buffer' }
     }
 })
 
 cmp.setup.cmdline(':', {
-    mapping = {
-        ['<C-k>'] = cmp.mapping.select_prev_item(),
-        ['<C-j>'] = cmp.mapping.select_next_item(),
-    },
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-        { name = 'path' }
+      { name = 'path' }
     }, {
-            { name = 'cmdline' }
-        })
+      { name = 'cmdline' }
+    }),
+    matching = { disallow_symbol_nonprefix_matching = false }
 })
